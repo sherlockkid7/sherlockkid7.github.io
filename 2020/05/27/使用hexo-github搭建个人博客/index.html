@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="tq">
   <meta name="keywords" content="">
-  <title>归档 - TQ个人博客</title>
+  <title>使用hexo+github搭建个人博客 - TQ个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -128,7 +128,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/archive.jpg') no-repeat center center;
+         style="background: url('/img/post.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -137,6 +137,45 @@
               
             </span>
 
+            
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2020-05-27 15:22">
+                    2020年5月27日 下午
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    442 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta mr-2">
+                      <i class="iconfont icon-clock-fill"></i>
+                    
+                    
+                    5
+                     分钟
+                  </span>
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  <span id="busuanzi_container_page_pv" class="post-meta" style="display: none">
+                    <i class="iconfont icon-eye" aria-hidden="true"></i>
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>
+                
+              </div>
             
           </div>
 
@@ -148,37 +187,139 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/05/27/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用hexo+github搭建个人博客</span>
-      <span style="float: right;">05-27</span>
-    </a>
-  
-</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>Hexo 是基于 Node.js 开发的一个静态博客生成器，提供本地实时预览及部署功能。</p>
+<h3 id="1-安装node和npm-或者cnpm"><a href="#1-安装node和npm-或者cnpm" class="headerlink" title="1.安装node和npm (或者cnpm)"></a>1.安装node和npm (或者cnpm)</h3><h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h3><h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h3><p>前两步我之前已经安装过 ，就不详细记述了</p>
+<p><strong>3.1 全局安装hexo</strong></p>
+<div class="hljs"><pre><code class="hljs plain">npm install -g hexo-cli</code></pre></div>
+
+<p><strong>3.2 安装 Hexo 完成后，在指定的目录执行下列命令，Hexo 将会指定的文件夹中新建所需要的文件</strong></p>
+<div class="hljs"><pre><code class="hljs plain">hexo init blog</code></pre></div>
+
+<p><strong>3.3 在指定文件夹下，启动本地预览服务</strong></p>
+<div class="hljs"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> blog
+<span class="hljs-comment"># 启动本地预览服务，默认是 127.0.0.1:4000（简写hexo s）</span>
+hexo server</code></pre></div>
+
+<p>也可以参考 Hexo 官方文档：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a> , 里面有具体的使用方式。</p>
+<h3 id="4-注册githup账号并新建仓库"><a href="#4-注册githup账号并新建仓库" class="headerlink" title="4.注册githup账号并新建仓库"></a>4.注册githup账号并新建仓库</h3><p>新建一个名为<code>你的用户名.github.io</code>的仓库（必须是你的用户名，其它名称无效），将来个人博客访问地址就是 <a href="http://test.github.io/" target="_blank" rel="noopener">http://用户名.github.io</a> </p>
+<h3 id="5-自动发布-Hexo-搭建的静态博客"><a href="#5-自动发布-Hexo-搭建的静态博客" class="headerlink" title="5.自动发布 Hexo 搭建的静态博客"></a>5.自动发布 Hexo 搭建的静态博客</h3><p><strong>5.1先修改 <code>_config.yml</code> 配置文件</strong></p>
+<p>下面是一个示例：</p>
+<div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span>
+  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github用户名:密码@github.com/sherlockkid7/sherlockkid7.github.io.git</span></code></pre></div>
+
+<p>上面的配置选项中，一定要注意在 repo 中按照对应的格式加入 Github 用户名和密码。</p>
+<p><strong>5.2安装自动发布的插件</strong></p>
+<div class="hljs"><pre><code class="hljs bash">npm install hexo-deployer-git --save</code></pre></div>
+
+<p><strong>5.3使用命令一键进行发布</strong></p>
+<div class="hljs"><pre><code class="hljs bash">hexo generate --deploy
+<span class="hljs-comment"># 或者</span>
+hexo deploy --generate</code></pre></div>
+
+<p>上面两条命令都可以，发布可能有延时，稍微等待即可。</p>
+<h3 id="6-新建文章"><a href="#6-新建文章" class="headerlink" title="6.新建文章"></a>6.新建文章</h3><div class="hljs"><pre><code class="hljs plain">hexo new 文章标题</code></pre></div>
+
+<h3 id="7-修改默认hexo主题"><a href="#7-修改默认hexo主题" class="headerlink" title="7.修改默认hexo主题"></a>7.修改默认hexo主题</h3><p>在github下载hexo-theme-fluid-1.8.0主题，并解压到themes文件夹中，修改 <code>_config.yml</code> 配置文件(注主题文件可以重命名为fluid)</p>
+<div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span></code></pre></div>
 
 
 
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Diary/">Diary</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/github/">github</a>
+                    
+                  </div>
+                
               </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                  </div>
+                </div>
+              
             </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC81MDI4My8yNjc3Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+              </div>
+            
           </div>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -244,6 +385,34 @@
 
 
 
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
 
 
   <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
@@ -278,7 +447,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "使用hexo+github搭建个人博客&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 70,
@@ -321,6 +490,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 

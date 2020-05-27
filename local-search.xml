@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>使用hexo+github搭建个人博客</title>
+    <link href="/2020/05/27/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2020/05/27/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<p>Hexo 是基于 Node.js 开发的一个静态博客生成器，提供本地实时预览及部署功能。</p><h3 id="1-安装node和npm-或者cnpm"><a href="#1-安装node和npm-或者cnpm" class="headerlink" title="1.安装node和npm (或者cnpm)"></a>1.安装node和npm (或者cnpm)</h3><h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h3><h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h3><p>前两步我之前已经安装过 ，就不详细记述了</p><p><strong>3.1 全局安装hexo</strong></p><div class="hljs"><pre><code class="hljs plain">npm install -g hexo-cli</code></pre></div><p><strong>3.2 安装 Hexo 完成后，在指定的目录执行下列命令，Hexo 将会指定的文件夹中新建所需要的文件</strong></p><div class="hljs"><pre><code class="hljs plain">hexo init blog</code></pre></div><p><strong>3.3 在指定文件夹下，启动本地预览服务</strong></p><div class="hljs"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> blog<span class="hljs-comment"># 启动本地预览服务，默认是 127.0.0.1:4000（简写hexo s）</span>hexo server</code></pre></div><p>也可以参考 Hexo 官方文档：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a> , 里面有具体的使用方式。</p><h3 id="4-注册githup账号并新建仓库"><a href="#4-注册githup账号并新建仓库" class="headerlink" title="4.注册githup账号并新建仓库"></a>4.注册githup账号并新建仓库</h3><p>新建一个名为<code>你的用户名.github.io</code>的仓库（必须是你的用户名，其它名称无效），将来个人博客访问地址就是 <a href="http://test.github.io/" target="_blank" rel="noopener">http://用户名.github.io</a> </p><h3 id="5-自动发布-Hexo-搭建的静态博客"><a href="#5-自动发布-Hexo-搭建的静态博客" class="headerlink" title="5.自动发布 Hexo 搭建的静态博客"></a>5.自动发布 Hexo 搭建的静态博客</h3><p><strong>5.1先修改 <code>_config.yml</code> 配置文件</strong></p><p>下面是一个示例：</p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github用户名:密码@github.com/sherlockkid7/sherlockkid7.github.io.git</span></code></pre></div><p>上面的配置选项中，一定要注意在 repo 中按照对应的格式加入 Github 用户名和密码。</p><p><strong>5.2安装自动发布的插件</strong></p><div class="hljs"><pre><code class="hljs bash">npm install hexo-deployer-git --save</code></pre></div><p><strong>5.3使用命令一键进行发布</strong></p><div class="hljs"><pre><code class="hljs bash">hexo generate --deploy<span class="hljs-comment"># 或者</span>hexo deploy --generate</code></pre></div><p>上面两条命令都可以，发布可能有延时，稍微等待即可。</p><h3 id="6-新建文章"><a href="#6-新建文章" class="headerlink" title="6.新建文章"></a>6.新建文章</h3><div class="hljs"><pre><code class="hljs plain">hexo new 文章标题</code></pre></div><h3 id="7-修改默认hexo主题"><a href="#7-修改默认hexo主题" class="headerlink" title="7.修改默认hexo主题"></a>7.修改默认hexo主题</h3><p>在github下载hexo-theme-fluid-1.8.0主题，并解压到themes文件夹中，修改 <code>_config.yml</code> 配置文件(注主题文件可以重命名为fluid)</p><div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span></code></pre></div>]]></content>
+    
+    
+    <categories>
+      
+      <category>Diary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+      <tag>github</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
