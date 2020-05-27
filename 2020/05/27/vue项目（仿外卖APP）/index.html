@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="tq">
   <meta name="keywords" content="">
-  <title>使用hexo+github搭建个人博客 - TQ个人博客</title>
+  <title>vue项目（仿外卖APP） - TQ个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -141,8 +141,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-27 15:22">
-                    2020年5月27日 下午
+                  <time datetime="2020-05-27 22:46">
+                    2020年5月27日 晚上
                   </time>
                 </div>
               
@@ -152,7 +152,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    442 字
+                    1.3k 字
                   </span>
                 
 
@@ -162,7 +162,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    5
+                    18
                      分钟
                   </span>
                 
@@ -198,44 +198,117 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>Hexo 是基于 Node.js 开发的一个静态博客生成器，提供本地实时预览及部署功能。</p>
-<h3 id="1-安装node和npm-或者cnpm"><a href="#1-安装node和npm-或者cnpm" class="headerlink" title="1.安装node和npm (或者cnpm)"></a>1.安装node和npm (或者cnpm)</h3><h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h3><h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h3><p>前两步我之前已经安装过 ，就不详细记述了</p>
-<p><strong>3.1 全局安装hexo</strong></p>
-<div class="hljs"><pre><code class="hljs plain">npm install -g hexo-cli</code></pre></div>
+              <p><strong>项目:关于外卖业务的前后台分离Web App</strong></p>
+<ul>
+<li>前台应用技术架构为: vue + vuex + vue-router + webpack + ES6； </li>
+<li>核心功能模块:商家, 商品, 购物车, 评论,用户等多个子模块;</li>
+<li>采用模块化、组件化、工程化的模式开发；</li>
+<li>后台使用 mockjs 模拟后台数据接口和API接口;</li>
+</ul>
+<p><strong>项目展示地址(<a href="http://tq07.gitee.io/vue-food" target="_blank" rel="noopener">点击前往</a>)</strong><br><img src="https://img-blog.csdnimg.cn/20200430112702320.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702289.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702290.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702280.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702228.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702136.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
+<p><strong>学习心得：</strong></p>
+<p>1) 熟悉一个项目的开发流程<br>2) 学会组件化、模块化、工程化的开发模式<br>3) 掌握使用 vue-cli 脚手架初始化 Vue.js 项目<br>4) 学会模拟 json 后端数据，实现前后端分离开发<br>5) 掌握一些项目优化技巧</p>
+<p><strong>项目中使用的Vue 插件或第三方库</strong></p>
+<ul>
+<li>使用 vue-router 开发单页应用</li>
+<li>使用 axios/vue-resource 与后端进行数据交互</li>
+<li>使用 vuex 管理应用组件状态 </li>
+<li>使用 better-scroll/vue-scroller 实现页面滑动效果</li>
+<li>使用 mint-ui 组件库构建界面 </li>
+<li>使用 vue-lazyload 实现图片惰加载 </li>
+<li>使用 mockjs 模拟后台数据接口</li>
+</ul>
+<p><strong>样式和布局</strong></p>
+<ul>
+<li>使用 stylus 编写模块化的 CSS </li>
+<li>使用 Vue.js 的过渡编写酷炫的交互动画 </li>
+</ul>
+<h3 id="项目中遇到的问题（难点）和项目优化方法"><a href="#项目中遇到的问题（难点）和项目优化方法" class="headerlink" title="项目中遇到的问题（难点）和项目优化方法"></a>项目中遇到的问题（难点）和项目优化方法</h3><p>1.解决点击响应延时 0.3s 问题<br>原因：当用户一次点击屏幕之后，浏览器并不能立刻判断用户是否要进行双击缩放，还是想要进行单击操作。因此，iOS Safari 就等待 300 毫秒，以判断用户是否再次点击了屏幕。<br>解决方法：利用FastClick，其原理是检测到touchend事件后，立刻出发模拟click事件，并且把浏览器300毫秒之后真正出发的事件给阻断掉</p>
+<div class="hljs"><pre><code class="hljs plain">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;as.alipayobjects.com&#x2F;g&#x2F;component&#x2F;fastclick&#x2F;1.0.6&#x2F;fastclick.js&quot;&gt;&lt;&#x2F;script&gt;
+    &lt;script&gt;
+      if(&#39;addEventListener&#39; in document)&#123;
+        document.addEventListener(&#39;DOMContentLoaded&#39;,function()&#123;
+          FastClick.attach(document.body);
+        &#125;,false)
+      &#125;
+      if(!window.Promise) &#123; 
+      document.writeln(&#39;&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;as.alipayobjects.com&#x2F;g&#x2F;component&#x2F;es6-promise&#x2F;3.2.2&#x2F;es6-promise.min.js&quot; &#39;+&#39;&gt;&#39;+&#39;&lt;&#39;+&#39;&#x2F;&#39;+&#39;script&gt;&#39;); 
+      &#125;
+    &lt;&#x2F;script&gt;</code></pre></div>
+<p>2.后台应用</p>
+<blockquote>
+<p>后台应用负责处理前台应用提交的请求, 并给前台应用返回 json 数据<br>前台应用负责展现数据, 与用户交互, 与后台应用交互<br>API接口  <a href="https://github.com/bailicangdu/node-elm/blob/master/API.md" target="_blank" rel="noopener">githup上面找的API接口</a></p>
+</blockquote>
+<p>3.封装 ajax 请求模块</p>
+<div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F; ajax 请求函数模块
+import axios from &#39;axios&#39;
+export default function ajax(url&#x3D;&#39;&#39;,data&#x3D;&#123;&#125;,type&#x3D;&#39;GET&#39;)&#123;
+    return new Promise(function(resolve, reject)&#123;
+	        &#x2F;&#x2F; 执行axios异步请求
+	        let promise
+           if (type &#x3D;&#x3D;&#x3D; &#39;GET&#39;) &#123; 
+            &#x2F;&#x2F; 准备 url query 参数数据 
+            let dataStr &#x3D; &#39;&#39; &#x2F;&#x2F;数据拼接字符串 
+            Object.keys(data).forEach(key &#x3D;&gt; &#123; 
+                dataStr +&#x3D; key + &#39;&#x3D;&#39; + data[key] + &#39;&amp;&#39;
+            &#125;)
+            if (dataStr !&#x3D;&#x3D; &#39;&#39;) &#123; 
+            dataStr &#x3D; dataStr.substring(0, dataStr.lastIndexOf(&#39;&amp;&#39;)) 
+            url &#x3D; url + &#39;?&#39; + dataStr 
+            &#125;
+            &#x2F;&#x2F; 发送 get 请求 
+            promise &#x3D; axios.get(url) 
+        &#125; else &#123; 
+            &#x2F;&#x2F; 发送 post 请求 
+            promise &#x3D; axios.post(url,data) 
+        &#125;
+        promise.then(response &#x3D;&gt; &#123; 
+            &#x2F;&#x2F; 成功调用resolve()
+            resolve(response) 
+        &#125;).catch(error &#x3D;&gt; &#123; 
+            &#x2F;&#x2F; 成功调用reject()
+            reject(error) 
+        &#125;) 
+    &#125;)
+&#125;</code></pre></div>
+<p>4.vuex 应用组件状态<br>vuex 的核心管理对象 <strong>store 对象模块</strong><br>state模块：状态对象<br>mutation type 常量名称模块<br>mutations 模块 ：直接更新state的多个方法的对象<br>actions 模块：通过mutations间接更新state的多个方法的对象</p>
+<div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F;store 对象模块
+import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+import state from &#39;.&#x2F;state&#39;
+import mutations from &#39;.&#x2F;mutations&#39; 
+import actions from &#39;.&#x2F;actions&#39;
+import getters from &#39;.&#x2F;getters&#39;
+Vue.use(Vuex)
 
-<p><strong>3.2 安装 Hexo 完成后，在指定的目录执行下列命令，Hexo 将会指定的文件夹中新建所需要的文件</strong></p>
-<div class="hljs"><pre><code class="hljs plain">hexo init blog</code></pre></div>
+export default new Vuex.Store(&#123;
+  state,
+  mutations, 
+  actions,
+  getters,
+&#125;)</code></pre></div>
+<p>5.模拟(mock)数据/接口<br>利用 mockjs 拦截 ajax 请求, 生成随机数据返回<br><a href="http://mockjs.com/" target="_blank" rel="noopener">mockjs</a></p>
+<p> 6.ShopGoods 组件</p>
+<ul>
+<li><p>内部使用了另外 3 个组件<br> a. ShopCart: 购物车组件<br> b. Cart: 购物车操作组件<br> c. Food: 食品详情组件 </p>
+</li>
+<li><p>使用第三方库 better-scroll: UI 滑动</p>
+<p>问题：Cart组件在添加食物的时候，第一次增加时, 没有 count，如果直接添加属性并赋值，新添加的属性没有数据劫持==&gt;数据绑定==&gt;更新了数据但界面不变<br>解决方法：Vue.set(food, ‘count’, 1) 给有数据绑定的对象添加指定属性名和值的属性(有绑定)<br>7.项目优化/扩展<br>（1）缓存路由组件对象</p>
+</li>
+</ul>
+<div class="hljs"><pre><code class="hljs plain">&lt;keep-alive&gt; 
+	&lt;router-view &#x2F;&gt; 
+&lt;&#x2F;keep-alive&gt;</code></pre></div>
 
-<p><strong>3.3 在指定文件夹下，启动本地预览服务</strong></p>
-<div class="hljs"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> blog
-<span class="hljs-comment"># 启动本地预览服务，默认是 127.0.0.1:4000（简写hexo s）</span>
-hexo server</code></pre></div>
+<p>好处: 复用路由组件对象, 复用路由组件获取的后台数据<br>（2）路由组件懒加载</p>
+<div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F; 返回路由组件的函数，只有执行该函数才会加载路由组件，这个函数在请求对应的路由路径时才会执行
+const Home &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Home.vue&#39;)
+const Order &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Order.vue&#39;)
+const Search &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Search.vue&#39;)
+const Profile &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Profile.vue&#39;)</code></pre></div>
 
-<p>也可以参考 Hexo 官方文档：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a> , 里面有具体的使用方式。</p>
-<h3 id="4-注册githup账号并新建仓库"><a href="#4-注册githup账号并新建仓库" class="headerlink" title="4.注册githup账号并新建仓库"></a>4.注册githup账号并新建仓库</h3><p>新建一个名为<code>你的用户名.github.io</code>的仓库（必须是你的用户名，其它名称无效），将来个人博客访问地址就是 <a href="http://test.github.io/" target="_blank" rel="noopener">http://用户名.github.io</a> </p>
-<h3 id="5-自动发布-Hexo-搭建的静态博客"><a href="#5-自动发布-Hexo-搭建的静态博客" class="headerlink" title="5.自动发布 Hexo 搭建的静态博客"></a>5.自动发布 Hexo 搭建的静态博客</h3><p><strong>5.1先修改 <code>_config.yml</code> 配置文件</strong></p>
-<p>下面是一个示例：</p>
-<div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span>
-  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span>
-  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://github用户名:密码@github.com/sherlockkid7/sherlockkid7.github.io.git</span></code></pre></div>
-
-<p>上面的配置选项中，一定要注意在 repo 中按照对应的格式加入 Github 用户名和密码。</p>
-<p><strong>5.2安装自动发布的插件</strong></p>
-<div class="hljs"><pre><code class="hljs bash">npm install hexo-deployer-git --save</code></pre></div>
-
-<p><strong>5.3使用命令一键进行发布</strong></p>
-<div class="hljs"><pre><code class="hljs bash">hexo generate --deploy
-<span class="hljs-comment"># 或者</span>
-hexo deploy --generate</code></pre></div>
-
-<p>上面两条命令都可以，发布可能有延时，稍微等待即可。</p>
-<h3 id="6-新建文章"><a href="#6-新建文章" class="headerlink" title="6.新建文章"></a>6.新建文章</h3><div class="hljs"><pre><code class="hljs plain">hexo new 文章标题</code></pre></div>
-
-<h3 id="7-修改默认hexo主题"><a href="#7-修改默认hexo主题" class="headerlink" title="7.修改默认hexo主题"></a>7.修改默认hexo主题</h3><p>在github下载hexo-theme-fluid-1.8.0主题，并解压到themes文件夹中，修改 <code>_config.yml</code> 配置文件(注主题文件可以重命名为fluid)</p>
-<div class="hljs"><pre><code class="hljs yml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span></code></pre></div>
-
-
-
+<p>8.打包文件分析与优化</p>
+<p>1) vue 脚手架提供了一个用于可视化分析打包文件的包 webpack-bundle-analyzer 和配置<br>2) 启用打包可视化: npm run build  – –report</p>
 
             </article>
             <hr>
@@ -253,9 +326,7 @@ hexo deploy --generate</code></pre></div>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
-                    
-                      <a class="hover-with-bg" href="/tags/github/">github</a>
+                      <a class="hover-with-bg" href="/tags/vue/">vue</a>
                     
                   </div>
                 
@@ -268,15 +339,15 @@ hexo deploy --generate</code></pre></div>
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/05/27/vue%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%BB%BF%E5%A4%96%E5%8D%96APP%EF%BC%89/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">vue项目（仿外卖APP）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
+                    
+                      <a href="/2020/05/27/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+                        <span class="hidden-mobile">使用hexo+github搭建个人博客</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </div>
                 </div>
@@ -453,7 +524,7 @@ hexo deploy --generate</code></pre></div>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "使用hexo+github搭建个人博客&nbsp;",
+        "vue项目（仿外卖APP）&nbsp;",
       ],
       cursorChar: "|",
       typeSpeed: 70,
