@@ -1,582 +1,43 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="rgba(10,10,10,.7)">
-  <meta name="description" content="">
-  <meta name="author" content="tq">
-  <meta name="keywords" content="">
-  <title>Flex布局 - TQ个人博客</title>
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-<meta name="generator" content="Hexo 4.2.1"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>TQ个人博客</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">
-              <i class="iconfont icon-tags-fill"></i>
-              标签</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/links/">
-              <i class="iconfont icon-link-fill"></i>
-              友链</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/post.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-              
-                <div class="mt-3 post-meta">
-                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-31 10:34">
-                    2020年5月31日 上午
-                  </time>
-                </div>
-              
-
-              <div class="mt-1">
-                
-                  
-                  <span class="post-meta mr-2">
-                    <i class="iconfont icon-chart"></i>
-                    1.8k 字
-                  </span>
-                
-
-                
-                  
-                  <span class="post-meta mr-2">
-                      <i class="iconfont icon-clock-fill"></i>
-                    
-                    
-                    21
-                     分钟
-                  </span>
-                
-
-                
-                  <!-- 不蒜子统计文章PV -->
-                  
-                  <span id="busuanzi_container_page_pv" class="post-meta" style="display: none">
-                    <i class="iconfont icon-eye" aria-hidden="true"></i>
-                    <span id="busuanzi_value_page_pv"></span> 次
-                  </span>
-                
-              </div>
-            
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <div class="post-content mx-auto" id="post">
-            
-            <article class="markdown-body">
-              <p>该文章是根据阮一峰老师的<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex 布局教程：语法篇</a>和MDN——<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank" rel="noopener">flex布局的基本概念</a>整理得出的。</p>
-<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”<br>任何一个容器都可以指定为 Flex 布局</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png"><link rel="icon" type="image/png" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="rgba(10,10,10,.7)"><meta name="description" content=""><meta name="author" content="tq"><meta name="keywords" content=""><title>Flex布局 - TQ个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="/css/main.css"><meta name="generator" content="Hexo 4.2.1"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>TQ个人博客</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(/img/post.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-05-31 10:34">2020年5月31日 上午</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.8k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 21 分钟</span></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><p>该文章是根据阮一峰老师的<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex 布局教程：语法篇</a>和MDN——<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank" rel="noopener">flex布局的基本概念</a>整理得出的。</p><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”<br>任何一个容器都可以指定为 Flex 布局</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
   <span class="hljs-attribute">display</span>: flex;
-&#125;</code></pre></div>
-
-<p>行内项目也可以使用 Flex 布局</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
+&#125;</code></pre></div><p>行内项目也可以使用 Flex 布局</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
   <span class="hljs-attribute">display</span>: inline-flex;
-&#125;</code></pre></div>
-
-<p>Webkit 内核的浏览器，必须加上-webkit前缀</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
+&#125;</code></pre></div><p>Webkit 内核的浏览器，必须加上-webkit前缀</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
   <span class="hljs-attribute">display</span>: -webkit-flex; <span class="hljs-comment">/* Safari */</span>
   <span class="hljs-attribute">display</span>: flex;
-&#125;</code></pre></div>
-
-<p>注意，设为 Flex 布局以后，容器中的直系子元素就会变为 flex 元素,并且子元素的<strong>float</strong>、<strong>clear</strong>和<strong>vertical-align</strong>属性将失效。</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>采用 Flex 布局的项目，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。<br><img src="https://img-blog.csdnimg.cn/20200531101024720.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
-<h3 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h3><ul>
-<li><strong>flex-direction</strong>         </li>
-</ul>
-<p>flex-direction属性决定主轴的方向（即flex 项目的排列方向）</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
+&#125;</code></pre></div><p>注意，设为 Flex 布局以后，容器中的直系子元素就会变为 flex 元素,并且子元素的<strong>float</strong>、<strong>clear</strong>和<strong>vertical-align</strong>属性将失效。</p><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>采用 Flex 布局的项目，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。<br><img src="https://img-blog.csdnimg.cn/20200531101024720.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" alt="在这里插入图片描述"></p><h3 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h3><ul><li><strong>flex-direction</strong></li></ul><p>flex-direction属性决定主轴的方向（即flex 项目的排列方向）</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
   <span class="hljs-attribute">flex-direction</span>: row | row-reverse | column | column-reverse;
-&#125;</code></pre></div>
-
-<p>row（默认值）：主轴为水平方向，起点在左端。<br>row-reverse：主轴为水平方向，起点在右端。<br>column：主轴为垂直方向，起点在上沿。<br>column-reverse：主轴为垂直方向，起点在下沿。</p>
-<ul>
-<li><strong>flex-wrap</strong>     </li>
-</ul>
-<p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
+&#125;</code></pre></div><p>row（默认值）：主轴为水平方向，起点在左端。<br>row-reverse：主轴为水平方向，起点在右端。<br>column：主轴为垂直方向，起点在上沿。<br>column-reverse：主轴为垂直方向，起点在下沿。</p><ul><li><strong>flex-wrap</strong></li></ul><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
   <span class="hljs-attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;
-&#125;</code></pre></div>
-
-<p>1）nowrap（默认）：不换行。<br>2）wrap：换行，第一行在上方。<br>3）wrap-reverse：换行，第一行在下方。</p>
-<ul>
-<li><p><strong>flex-flow</strong> </p>
-<p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</p>
-</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
+&#125;</code></pre></div><p>1）nowrap（默认）：不换行。<br>2）wrap：换行，第一行在上方。<br>3）wrap-reverse：换行，第一行在下方。</p><ul><li><p><strong>flex-flow</strong></p><p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</p></li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
   <span class="hljs-attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;
-&#125;</code></pre></div>
-
-<ul>
-<li><strong>justify-content</strong><br>justify-content属性定义了项目在主轴上（水平方向）的对齐方式。</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
+&#125;</code></pre></div><ul><li><strong>justify-content</strong><br>justify-content属性定义了项目在主轴上（水平方向）的对齐方式。</li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
   <span class="hljs-attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;
-&#125;</code></pre></div>
-
-<p>flex-start（默认值）：左对齐<br>flex-end：右对齐<br>center： 居中<br>space-between：两端对齐，项目之间的间隔相等。<br>space-around：每个项目两侧的间隔相等。项目之间的间隔比项目与边框的间隔大一倍。</p>
-<ul>
-<li><strong>align-items</strong><br>align-items属性定义项目在交叉轴上（垂直方向）如何对齐</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
+&#125;</code></pre></div><p>flex-start（默认值）：左对齐<br>flex-end：右对齐<br>center： 居中<br>space-between：两端对齐，项目之间的间隔相等。<br>space-around：每个项目两侧的间隔相等。项目之间的间隔比项目与边框的间隔大一倍。</p><ul><li><strong>align-items</strong><br>align-items属性定义项目在交叉轴上（垂直方向）如何对齐</li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
   <span class="hljs-attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;
-&#125;</code></pre></div>
-
-<p>flex-start：交叉轴的起点对齐。<br>flex-end：交叉轴的终点对齐。<br>center：交叉轴的中点对齐。<br>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
-<ul>
-<li>align-content<br>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
+&#125;</code></pre></div><p>flex-start：交叉轴的起点对齐。<br>flex-end：交叉轴的终点对齐。<br>center：交叉轴的中点对齐。<br>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p><ul><li>align-content<br>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span> &#123;
   <span class="hljs-attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;
-&#125;</code></pre></div>
-
-<p>flex-start：与交叉轴的起点对齐。<br>flex-end：与交叉轴的终点对齐。<br>center：与交叉轴的中点对齐。<br>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。<br>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p>
-<h3 id="项目的属性"><a href="#项目的属性" class="headerlink" title="项目的属性"></a>项目的属性</h3><ul>
-<li>order属性<br>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+&#125;</code></pre></div><p>flex-start：与交叉轴的起点对齐。<br>flex-end：与交叉轴的终点对齐。<br>center：与交叉轴的中点对齐。<br>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。<br>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。<br>stretch（默认值）：轴线占满整个交叉轴。</p><h3 id="项目的属性"><a href="#项目的属性" class="headerlink" title="项目的属性"></a>项目的属性</h3><ul><li>order属性<br>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
   <span class="hljs-attribute">order</span>: &lt;integer&gt;;
-&#125;</code></pre></div>
-
-<ul>
-<li><strong>flex-grow属性</strong><br>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+&#125;</code></pre></div><ul><li><strong>flex-grow属性</strong><br>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
   <span class="hljs-attribute">flex-grow</span>: &lt;number&gt;; <span class="hljs-comment">/* default 0 */</span>
-&#125;</code></pre></div>
-
-<p>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
-<ul>
-<li><strong>flex-shrink属性</strong><br>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。<br>flex-shrink 属性只能是一个 <code>&lt;number&gt;</code>。负值对该属性无效。</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+&#125;</code></pre></div><p>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p><ul><li><strong>flex-shrink属性</strong><br>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。<br>flex-shrink 属性只能是一个 <code>&lt;number&gt;</code>。负值对该属性无效。</li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
   <span class="hljs-attribute">flex-shrink</span>: &lt;number&gt;; <span class="hljs-comment">/* default 1 */</span>
-&#125;</code></pre></div>
-
-<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
-<ul>
-<li><strong>flex-basis属性</strong><br>flex-basis属性定义了项目的空间大小。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+&#125;</code></pre></div><p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p><ul><li><strong>flex-basis属性</strong><br>flex-basis属性定义了项目的空间大小。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
   <span class="hljs-attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="hljs-comment">/* default auto */</span>
-&#125;</code></pre></div>
-
-<p>取值<br>&lt;’width’&gt;<br>width 值可以是<code>&lt;length&gt;</code>; 该值也可以是一个相对于其父弹性盒容器主轴尺寸的百分数 。负值是不被允许的。默认为 auto。<br>content<br>基于 flex 项目的内容自动调整大小。</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-comment">/* 指定&lt;'width'&gt; */</span>
+&#125;</code></pre></div><p>取值<br>&lt;’width’&gt;<br>width 值可以是<code>&lt;length&gt;</code>; 该值也可以是一个相对于其父弹性盒容器主轴尺寸的百分数 。负值是不被允许的。默认为 auto。<br>content<br>基于 flex 项目的内容自动调整大小。</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-comment">/* 指定&lt;'width'&gt; */</span>
 <span class="hljs-selector-tag">flex-basis</span>: 10<span class="hljs-selector-tag">em</span>;
 <span class="hljs-selector-tag">flex-basis</span>: 3<span class="hljs-selector-tag">px</span>;
 <span class="hljs-selector-tag">flex-basis</span>: <span class="hljs-selector-tag">auto</span>;
 
 <span class="hljs-comment">/* 在flex item内容上的自动尺寸 */</span>
-<span class="hljs-selector-tag">flex-basis</span>: <span class="hljs-selector-tag">content</span>;</code></pre></div>
-
-<p>如果没有给项目设定尺寸，flex-basis 的值采用项目内容的尺寸。这就解释了：我们给只要给Flex项目的容器声明 display: flex ，所有子元素就会排成一行，且自动分配小大以充分展示项目的内容。<br>Note: 当一个项目同时被设置了 flex-basis (除值为 auto 外) 和 width (或者在 flex-direction: column 情况下设置了height) , flex-basis 具有更高的优先级.</p>
-<ul>
-<li><p><strong>flex属性</strong></p>
-<p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。<br>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
-</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+<span class="hljs-selector-tag">flex-basis</span>: <span class="hljs-selector-tag">content</span>;</code></pre></div><p>如果没有给项目设定尺寸，flex-basis 的值采用项目内容的尺寸。这就解释了：我们给只要给Flex项目的容器声明 display: flex ，所有子元素就会排成一行，且自动分配小大以充分展示项目的内容。<br>Note: 当一个项目同时被设置了 flex-basis (除值为 auto 外) 和 width (或者在 flex-direction: column 情况下设置了height) , flex-basis 具有更高的优先级.</p><ul><li><p><strong>flex属性</strong></p><p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。<br>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p></li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
   <span class="hljs-attribute">flex</span>: none | [ &lt;<span class="hljs-string">'flex-grow'</span>&gt; &lt;<span class="hljs-string">'flex-shrink'</span>&gt;? || &lt;<span class="hljs-string">'flex-basis'</span>&gt; ]
-&#125;</code></pre></div>
-
-<p>下面是几种预定义的值：<br><strong>flex: initial</strong><br>把flex项目重置为Flexbox的初始值，它相当于 <strong>flex: 0 1 auto</strong>。</p>
-<p>解析：flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
-<p>​            flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小</p>
-<p>​            flex-basis属性定义了项目的空间大小。它的默认值为auto，即项目的本来大小。</p>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+&#125;</code></pre></div><p>下面是几种预定义的值：<br><strong>flex: initial</strong><br>把flex项目重置为Flexbox的初始值，它相当于 <strong>flex: 0 1 auto</strong>。</p><p>解析：flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p><p>​ flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小</p><p>​ flex-basis属性定义了项目的空间大小。它的默认值为auto，即项目的本来大小。</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
   <span class="hljs-attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="hljs-comment">/* default auto */</span>
-&#125;</code></pre></div>
-
-<p><strong>flex: auto</strong><br>flex: auto 等同于 <strong>flex: 1 1 auto</strong>；这种情况下，flex项目在需要的时候既可以拉伸也可以收缩</p>
-<p>解析：所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）</p>
-<p>​            flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小</p>
-<p>​            flex-basis属性定义了项目的空间大小。它的默认值为auto，即项目的本来大小。</p>
-<p><strong>flex: none</strong><br>flex: none 可以把flex项目设置为不可伸缩。它和设置为 <strong>flex: 0 0 auto</strong> 是一样的。项目既不能拉伸或者收缩，但是项目会按具有 flex-basis: auto 属性的flexbox进行布局。</p>
-<ul>
-<li>align-self属性<br>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</li>
-</ul>
-<div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+&#125;</code></pre></div><p><strong>flex: auto</strong><br>flex: auto 等同于 <strong>flex: 1 1 auto</strong>；这种情况下，flex项目在需要的时候既可以拉伸也可以收缩</p><p>解析：所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）</p><p>​ flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小</p><p>​ flex-basis属性定义了项目的空间大小。它的默认值为auto，即项目的本来大小。</p><p><strong>flex: none</strong><br>flex: none 可以把flex项目设置为不可伸缩。它和设置为 <strong>flex: 0 0 auto</strong> 是一样的。项目既不能拉伸或者收缩，但是项目会按具有 flex-basis: auto 属性的flexbox进行布局。</p><ul><li>align-self属性<br>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</li></ul><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
   <span class="hljs-attribute">align-self</span>: auto | flex-start | flex-end | center | baseline | stretch;
-&#125;</code></pre></div>
-
-<p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
-
-            </article>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/flex/">flex</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/flex%E5%B8%83%E5%B1%80/">flex布局</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/05/31/Vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Vue组件化开发——学习笔记二</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/05/28/Vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/">
-                        <span class="hidden-mobile">Vue.js学习笔记一</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <div class="comments" id="comments">
-                
-                <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC81MDI4My8yNjc3Mw==">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-              </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-    
-  </main>
-
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>©2020 By TQ</div>
-    <div>
-      Power by
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
-    
-
-    
-
-    
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/main.js" ></script>
-
-
-  <script  src="/js/lazyload.js" ></script>
-
-
-
-  
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '.post-content',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 0,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
-
-
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-<!-- Plugins -->
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "Flex布局&nbsp;",
-      ],
-      cursorChar: "|",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
+&#125;</code></pre></div><p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p></article><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/flex/">flex</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/flex%E5%B8%83%E5%B1%80/">flex布局</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-6"><a href="/2020/05/31/Vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">Vue组件化开发——学习笔记二</span> <span class="visible-mobile">上一篇</span></a></div><div class="post-next col-6"><a href="/2020/05/28/Vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/"><span class="hidden-mobile">Vue.js学习笔记一</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></div></div></div><div class="comments" id="comments"></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div>©2020 By TQ</div><div>Power by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span></div></div><p id="hitokoto">获取中...</p></footer><style>#hitokoto{text-align:center;color:#fff;background-color:rgba(10,10,10,.8);margin-bottom:0;padding:10px 0}</style><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="/js/clipboard-use.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","Flex布局&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
       placement: "right",
       visible: "hover",
       
@@ -586,104 +47,35 @@
     for (item of el) {
       res.push(".markdown-body > " + item)
     }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
+    anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script>var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r,t){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>var now = new Date();
+  function createtime(){
+      var grt= new Date("05/27/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
       }
-    );
-  </script>
-
-
-
-
-
-
-
-  
-  
-    <script>
-      !function (e, t, a) {
-        function r() {
-          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
-          requestAnimationFrame(r)
-        }
-
-        function n() {
-          var t = "function" == typeof e.onclick && e.onclick;
-          e.onclick = function (e) {
-            t && t(), o(e)
-          }
-        }
-
-        function o(e) {
-          var a = t.createElement("div");
-          a.className = "heart", s.push({
-            el: a,
-            x: e.clientX - 5,
-            y: e.clientY - 5,
-            scale: 1,
-            alpha: 1,
-            color: c()
-          }), t.body.appendChild(a)
-        }
-
-        function i(e) {
-          var a = t.createElement("style");
-          a.type = "text/css";
-          try {
-            a.appendChild(t.createTextNode(e))
-          } catch (t) {
-            a.styleSheet.cssText = e
-          }
-          t.getElementsByTagName("head")[0].appendChild(a)
-        }
-
-        function c() {
-          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
-        }
-
-        var s = [];
-        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
-          setTimeout(e, 1e3 / 60)
-        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
-      }(window, document);
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  fetch('https://v1.hitokoto.cn/')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+      })
+      .catch(console.error)</script></body></html>

@@ -1,230 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="rgba(10,10,10,.7)">
-  <meta name="description" content="">
-  <meta name="author" content="tq">
-  <meta name="keywords" content="">
-  <title>vue项目（仿外卖APP） - TQ个人博客</title>
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css" />
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-<meta name="generator" content="Hexo 4.2.1"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>TQ个人博客</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">
-              <i class="iconfont icon-tags-fill"></i>
-              标签</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/links/">
-              <i class="iconfont icon-link-fill"></i>
-              友链</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/post.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-              
-                <div class="mt-3 post-meta">
-                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-27 22:46">
-                    2020年5月27日 晚上
-                  </time>
-                </div>
-              
-
-              <div class="mt-1">
-                
-                  
-                  <span class="post-meta mr-2">
-                    <i class="iconfont icon-chart"></i>
-                    1.3k 字
-                  </span>
-                
-
-                
-                  
-                  <span class="post-meta mr-2">
-                      <i class="iconfont icon-clock-fill"></i>
-                    
-                    
-                    18
-                     分钟
-                  </span>
-                
-
-                
-                  <!-- 不蒜子统计文章PV -->
-                  
-                  <span id="busuanzi_container_page_pv" class="post-meta" style="display: none">
-                    <i class="iconfont icon-eye" aria-hidden="true"></i>
-                    <span id="busuanzi_value_page_pv"></span> 次
-                  </span>
-                
-              </div>
-            
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <div class="post-content mx-auto" id="post">
-            
-            <article class="markdown-body">
-              <p><strong>项目:关于外卖业务的前后台分离Web App</strong></p>
-<ul>
-<li>前台应用技术架构为: vue + vuex + vue-router + webpack + ES6； </li>
-<li>核心功能模块:商家, 商品, 购物车, 评论,用户等多个子模块;</li>
-<li>采用模块化、组件化、工程化的模式开发；</li>
-<li>后台使用 mockjs 模拟后台数据接口和API接口;</li>
-</ul>
-<p><strong>项目展示地址(<a href="http://tq07.gitee.io/vue-food" target="_blank" rel="noopener">点击前往</a>)</strong><br><img src="https://img-blog.csdnimg.cn/20200430112702320.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702289.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702290.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702280.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702228.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702136.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p>
-<p><strong>学习心得：</strong></p>
-<p>1) 熟悉一个项目的开发流程<br>2) 学会组件化、模块化、工程化的开发模式<br>3) 掌握使用 vue-cli 脚手架初始化 Vue.js 项目<br>4) 学会模拟 json 后端数据，实现前后端分离开发<br>5) 掌握一些项目优化技巧</p>
-<p><strong>项目中使用的Vue 插件或第三方库</strong></p>
-<ul>
-<li>使用 vue-router 开发单页应用</li>
-<li>使用 axios/vue-resource 与后端进行数据交互</li>
-<li>使用 vuex 管理应用组件状态 </li>
-<li>使用 better-scroll/vue-scroller 实现页面滑动效果</li>
-<li>使用 mint-ui 组件库构建界面 </li>
-<li>使用 vue-lazyload 实现图片惰加载 </li>
-<li>使用 mockjs 模拟后台数据接口</li>
-</ul>
-<p><strong>样式和布局</strong></p>
-<ul>
-<li>使用 stylus 编写模块化的 CSS </li>
-<li>使用 Vue.js 的过渡编写酷炫的交互动画 </li>
-</ul>
-<h3 id="项目中遇到的问题（难点）和项目优化方法"><a href="#项目中遇到的问题（难点）和项目优化方法" class="headerlink" title="项目中遇到的问题（难点）和项目优化方法"></a>项目中遇到的问题（难点）和项目优化方法</h3><p>1.解决点击响应延时 0.3s 问题<br>原因：当用户一次点击屏幕之后，浏览器并不能立刻判断用户是否要进行双击缩放，还是想要进行单击操作。因此，iOS Safari 就等待 300 毫秒，以判断用户是否再次点击了屏幕。<br>解决方法：利用FastClick，其原理是检测到touchend事件后，立刻出发模拟click事件，并且把浏览器300毫秒之后真正出发的事件给阻断掉</p>
-<div class="hljs"><pre><code class="hljs plain">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;as.alipayobjects.com&#x2F;g&#x2F;component&#x2F;fastclick&#x2F;1.0.6&#x2F;fastclick.js&quot;&gt;&lt;&#x2F;script&gt;
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png"><link rel="icon" type="image/png" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="rgba(10,10,10,.7)"><meta name="description" content=""><meta name="author" content="tq"><meta name="keywords" content=""><title>vue项目（仿外卖APP） - TQ个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="/css/main.css"><meta name="generator" content="Hexo 4.2.1"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>TQ个人博客</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(/img/post.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-05-27 22:46">2020年5月27日 晚上</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.3k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 18 分钟</span></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><p><strong>项目:关于外卖业务的前后台分离Web App</strong></p><ul><li>前台应用技术架构为: vue + vuex + vue-router + webpack + ES6；</li><li>核心功能模块:商家, 商品, 购物车, 评论,用户等多个子模块;</li><li>采用模块化、组件化、工程化的模式开发；</li><li>后台使用 mockjs 模拟后台数据接口和API接口;</li></ul><p><strong>项目展示地址(<a href="http://tq07.gitee.io/vue-food" target="_blank" rel="noopener">点击前往</a>)</strong><br><img src="https://img-blog.csdnimg.cn/20200430112702320.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702289.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702290.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702280.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702228.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200430112702136.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" alt="在这里插入图片描述"></p><p><strong>学习心得：</strong></p><p>1) 熟悉一个项目的开发流程<br>2) 学会组件化、模块化、工程化的开发模式<br>3) 掌握使用 vue-cli 脚手架初始化 Vue.js 项目<br>4) 学会模拟 json 后端数据，实现前后端分离开发<br>5) 掌握一些项目优化技巧</p><p><strong>项目中使用的Vue 插件或第三方库</strong></p><ul><li>使用 vue-router 开发单页应用</li><li>使用 axios/vue-resource 与后端进行数据交互</li><li>使用 vuex 管理应用组件状态</li><li>使用 better-scroll/vue-scroller 实现页面滑动效果</li><li>使用 mint-ui 组件库构建界面</li><li>使用 vue-lazyload 实现图片惰加载</li><li>使用 mockjs 模拟后台数据接口</li></ul><p><strong>样式和布局</strong></p><ul><li>使用 stylus 编写模块化的 CSS</li><li>使用 Vue.js 的过渡编写酷炫的交互动画</li></ul><h3 id="项目中遇到的问题（难点）和项目优化方法"><a href="#项目中遇到的问题（难点）和项目优化方法" class="headerlink" title="项目中遇到的问题（难点）和项目优化方法"></a>项目中遇到的问题（难点）和项目优化方法</h3><p>1.解决点击响应延时 0.3s 问题<br>原因：当用户一次点击屏幕之后，浏览器并不能立刻判断用户是否要进行双击缩放，还是想要进行单击操作。因此，iOS Safari 就等待 300 毫秒，以判断用户是否再次点击了屏幕。<br>解决方法：利用FastClick，其原理是检测到touchend事件后，立刻出发模拟click事件，并且把浏览器300毫秒之后真正出发的事件给阻断掉</p><div class="hljs"><pre><code class="hljs plain">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;as.alipayobjects.com&#x2F;g&#x2F;component&#x2F;fastclick&#x2F;1.0.6&#x2F;fastclick.js&quot;&gt;&lt;&#x2F;script&gt;
     &lt;script&gt;
       if(&#39;addEventListener&#39; in document)&#123;
         document.addEventListener(&#39;DOMContentLoaded&#39;,function()&#123;
@@ -234,13 +8,7 @@
       if(!window.Promise) &#123; 
       document.writeln(&#39;&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;as.alipayobjects.com&#x2F;g&#x2F;component&#x2F;es6-promise&#x2F;3.2.2&#x2F;es6-promise.min.js&quot; &#39;+&#39;&gt;&#39;+&#39;&lt;&#39;+&#39;&#x2F;&#39;+&#39;script&gt;&#39;); 
       &#125;
-    &lt;&#x2F;script&gt;</code></pre></div>
-<p>2.后台应用</p>
-<blockquote>
-<p>后台应用负责处理前台应用提交的请求, 并给前台应用返回 json 数据<br>前台应用负责展现数据, 与用户交互, 与后台应用交互<br>API接口  <a href="https://github.com/bailicangdu/node-elm/blob/master/API.md" target="_blank" rel="noopener">githup上面找的API接口</a></p>
-</blockquote>
-<p>3.封装 ajax 请求模块</p>
-<div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F; ajax 请求函数模块
+    &lt;&#x2F;script&gt;</code></pre></div><p>2.后台应用</p><blockquote><p>后台应用负责处理前台应用提交的请求, 并给前台应用返回 json 数据<br>前台应用负责展现数据, 与用户交互, 与后台应用交互<br>API接口 <a href="https://github.com/bailicangdu/node-elm/blob/master/API.md" target="_blank" rel="noopener">githup上面找的API接口</a></p></blockquote><p>3.封装 ajax 请求模块</p><div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F; ajax 请求函数模块
 import axios from &#39;axios&#39;
 export default function ajax(url&#x3D;&#39;&#39;,data&#x3D;&#123;&#125;,type&#x3D;&#39;GET&#39;)&#123;
     return new Promise(function(resolve, reject)&#123;
@@ -270,9 +38,7 @@ export default function ajax(url&#x3D;&#39;&#39;,data&#x3D;&#123;&#125;,type&#x3
             reject(error) 
         &#125;) 
     &#125;)
-&#125;</code></pre></div>
-<p>4.vuex 应用组件状态<br>vuex 的核心管理对象 <strong>store 对象模块</strong><br>state模块：状态对象<br>mutation type 常量名称模块<br>mutations 模块 ：直接更新state的多个方法的对象<br>actions 模块：通过mutations间接更新state的多个方法的对象</p>
-<div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F;store 对象模块
+&#125;</code></pre></div><p>4.vuex 应用组件状态<br>vuex 的核心管理对象 <strong>store 对象模块</strong><br>state模块：状态对象<br>mutation type 常量名称模块<br>mutations 模块 ：直接更新state的多个方法的对象<br>actions 模块：通过mutations间接更新state的多个方法的对象</p><div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F;store 对象模块
 import Vue from &#39;vue&#39;
 import Vuex from &#39;vuex&#39;
 import state from &#39;.&#x2F;state&#39;
@@ -286,268 +52,13 @@ export default new Vuex.Store(&#123;
   mutations, 
   actions,
   getters,
-&#125;)</code></pre></div>
-<p>5.模拟(mock)数据/接口<br>利用 mockjs 拦截 ajax 请求, 生成随机数据返回<br><a href="http://mockjs.com/" target="_blank" rel="noopener">mockjs</a></p>
-<p> 6.ShopGoods 组件</p>
-<ul>
-<li><p>内部使用了另外 3 个组件<br> a. ShopCart: 购物车组件<br> b. Cart: 购物车操作组件<br> c. Food: 食品详情组件 </p>
-</li>
-<li><p>使用第三方库 better-scroll: UI 滑动</p>
-<p>问题：Cart组件在添加食物的时候，第一次增加时, 没有 count，如果直接添加属性并赋值，新添加的属性没有数据劫持==&gt;数据绑定==&gt;更新了数据但界面不变<br>解决方法：Vue.set(food, ‘count’, 1) 给有数据绑定的对象添加指定属性名和值的属性(有绑定)<br>7.项目优化/扩展<br>（1）缓存路由组件对象</p>
-</li>
-</ul>
-<div class="hljs"><pre><code class="hljs plain">&lt;keep-alive&gt; 
+&#125;)</code></pre></div><p>5.模拟(mock)数据/接口<br>利用 mockjs 拦截 ajax 请求, 生成随机数据返回<br><a href="http://mockjs.com/" target="_blank" rel="noopener">mockjs</a></p><p>6.ShopGoods 组件</p><ul><li><p>内部使用了另外 3 个组件<br>a. ShopCart: 购物车组件<br>b. Cart: 购物车操作组件<br>c. Food: 食品详情组件</p></li><li><p>使用第三方库 better-scroll: UI 滑动</p><p>问题：Cart组件在添加食物的时候，第一次增加时, 没有 count，如果直接添加属性并赋值，新添加的属性没有数据劫持==&gt;数据绑定==&gt;更新了数据但界面不变<br>解决方法：Vue.set(food, ‘count’, 1) 给有数据绑定的对象添加指定属性名和值的属性(有绑定)<br>7.项目优化/扩展<br>（1）缓存路由组件对象</p></li></ul><div class="hljs"><pre><code class="hljs plain">&lt;keep-alive&gt; 
 	&lt;router-view &#x2F;&gt; 
-&lt;&#x2F;keep-alive&gt;</code></pre></div>
-
-<p>好处: 复用路由组件对象, 复用路由组件获取的后台数据<br>（2）路由组件懒加载</p>
-<div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F; 返回路由组件的函数，只有执行该函数才会加载路由组件，这个函数在请求对应的路由路径时才会执行
+&lt;&#x2F;keep-alive&gt;</code></pre></div><p>好处: 复用路由组件对象, 复用路由组件获取的后台数据<br>（2）路由组件懒加载</p><div class="hljs"><pre><code class="hljs plain">&#x2F;&#x2F; 返回路由组件的函数，只有执行该函数才会加载路由组件，这个函数在请求对应的路由路径时才会执行
 const Home &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Home.vue&#39;)
 const Order &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Order.vue&#39;)
 const Search &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Search.vue&#39;)
-const Profile &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Profile.vue&#39;)</code></pre></div>
-
-<p>8.打包文件分析与优化</p>
-<p>1) vue 脚手架提供了一个用于可视化分析打包文件的包 webpack-bundle-analyzer 和配置<br>2) 启用打包可视化: npm run build  – –report</p>
-
-            </article>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Vue/">Vue</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/vue/">vue</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
-              
-              
-                <div class="post-prevnext row">
-                  <div class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/05/28/Vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Vue.js学习笔记一</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </div>
-                  <div class="post-next col-6">
-                    
-                    
-                      <a href="/2020/05/27/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
-                        <span class="hidden-mobile">使用hexo+github搭建个人博客</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </div>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <div class="comments" id="comments">
-                
-                <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC81MDI4My8yNjc3Mw==">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-              </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-    
-  </main>
-
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>©2020 By TQ</div>
-    <div>
-      Power by
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
-    
-
-    
-
-    
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/main.js" ></script>
-
-
-  <script  src="/js/lazyload.js" ></script>
-
-
-
-  
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '.post-content',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 0,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
-  </script>
-
-
-
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-<!-- Plugins -->
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "vue项目（仿外卖APP）&nbsp;",
-      ],
-      cursorChar: "|",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
+const Profile &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Profile.vue&#39;)</code></pre></div><p>8.打包文件分析与优化</p><p>1) vue 脚手架提供了一个用于可视化分析打包文件的包 webpack-bundle-analyzer 和配置<br>2) 启用打包可视化: npm run build – –report</p></article><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/Vue/">Vue</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/vue/">vue</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-6"><a href="/2020/05/28/Vue-js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">Vue.js学习笔记一</span> <span class="visible-mobile">上一篇</span></a></div><div class="post-next col-6"><a href="/2020/05/27/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><span class="hidden-mobile">使用hexo+github搭建个人博客</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></div></div></div><div class="comments" id="comments"></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div>©2020 By TQ</div><div>Power by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span></div></div><p id="hitokoto">获取中...</p></footer><style>#hitokoto{text-align:center;color:#fff;background-color:rgba(10,10,10,.8);margin-bottom:0;padding:10px 0}</style><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="/js/clipboard-use.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","vue项目（仿外卖APP）&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
       placement: "right",
       visible: "hover",
       
@@ -557,104 +68,35 @@ const Profile &#x3D; () &#x3D;&gt; import(&#39;..&#x2F;views&#x2F;Profile.vue&#3
     for (item of el) {
       res.push(".markdown-body > " + item)
     }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
+    anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script>var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r,t){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>var now = new Date();
+  function createtime(){
+      var grt= new Date("05/27/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
       }
-    );
-  </script>
-
-
-
-
-
-
-
-  
-  
-    <script>
-      !function (e, t, a) {
-        function r() {
-          for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
-          requestAnimationFrame(r)
-        }
-
-        function n() {
-          var t = "function" == typeof e.onclick && e.onclick;
-          e.onclick = function (e) {
-            t && t(), o(e)
-          }
-        }
-
-        function o(e) {
-          var a = t.createElement("div");
-          a.className = "heart", s.push({
-            el: a,
-            x: e.clientX - 5,
-            y: e.clientY - 5,
-            scale: 1,
-            alpha: 1,
-            color: c()
-          }), t.body.appendChild(a)
-        }
-
-        function i(e) {
-          var a = t.createElement("style");
-          a.type = "text/css";
-          try {
-            a.appendChild(t.createTextNode(e))
-          } catch (t) {
-            a.styleSheet.cssText = e
-          }
-          t.getElementsByTagName("head")[0].appendChild(a)
-        }
-
-        function c() {
-          return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
-        }
-
-        var s = [];
-        e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
-          setTimeout(e, 1e3 / 60)
-        }, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()
-      }(window, document);
-    </script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  fetch('https://v1.hitokoto.cn/')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+      })
+      .catch(console.error)</script></body></html>
