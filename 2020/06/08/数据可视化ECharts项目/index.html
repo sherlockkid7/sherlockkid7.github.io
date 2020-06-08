@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png"><link rel="icon" type="image/png" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="rgba(10,10,10,.7)"><meta name="description" content=""><meta name="author" content="tq"><meta name="keywords" content=""><title>数据可视化ECharts项目 - TQ个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="/css/main.css"><meta name="generator" content="Hexo 4.2.1"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>TQ个人博客</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(/img/post.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-06-08 18:27">2020年6月8日 晚上</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.4k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 18 分钟</span></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><p><img src="https://img-blog.csdnimg.cn/20200608152310511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" alt="在这里插入图片描述"><br>此项目是根据<a href="https://www.bilibili.com/video/BV1v7411R7mp?p=51" target="_blank" rel="noopener">pink老师的课程</a>实现的ECharts数据可视化项目<br>项目地址： <a href="http://tq07.gitee.io/echarts" target="_blank" rel="noopener">http://tq07.gitee.io/echarts</a></p><h3 id="Echarts基础知识"><a href="#Echarts基础知识" class="headerlink" title="Echarts基础知识"></a>Echarts基础知识</h3><blockquote><p>ECharts，一个使用 JavaScript 实现的开源可视化库，可以流畅的运行在 PC和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖矢量图形库ZRender，提供直观，交互丰富，可高度个性化定制的数据可视化图表。<br>官网地址：<a href="https://www.echartsjs.com/zh/index.html" target="_blank" rel="noopener">https://www.echartsjs.com/zh/index.html</a></p></blockquote><h4 id="1-使用步骤："><a href="#1-使用步骤：" class="headerlink" title="1.使用步骤："></a>1.使用步骤：</h4><p>1.获取 ECharts （<a href="https://echarts.apache.org/zh/download.html" target="_blank" rel="noopener">Apache ECharts (incubating) 官网下载界面</a>）（该项目使用直接下载的ECharts插件）</p><p>2.引入ECharts 插件到html页面中</p><div class="hljs"><pre><code class="hljs js">&lt;script src=<span class="hljs-string">"./js/echarts.min.js"</span>&gt;&lt;<span class="hljs-regexp">/script&gt;</span></code></pre></div><p>3.准备一个具备大小的DOM容器</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- 为 ECharts 准备一个具备大小（宽高）的 DOM --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 600px;height:400px;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre></div><p>4.初始化echarts实例对象</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// 基于准备好的dom，初始化echarts实例</span>
+ <span class="hljs-keyword">var</span> myChart = echarts.init(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'main'</span>));</code></pre></div><p>5.指定配置项和数据(option)</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> option = &#123;
+            title: &#123;
+                text: <span class="hljs-string">'ECharts 入门示例'</span>
+            &#125;,
+            tooltip: &#123;&#125;,
+            legend: &#123;
+                data:[<span class="hljs-string">'销量'</span>]
+            &#125;,
+            xAxis: &#123;
+                data: [<span class="hljs-string">"衬衫"</span>,<span class="hljs-string">"羊毛衫"</span>,<span class="hljs-string">"雪纺衫"</span>,<span class="hljs-string">"裤子"</span>,<span class="hljs-string">"高跟鞋"</span>,<span class="hljs-string">"袜子"</span>]
+            &#125;,
+            yAxis: &#123;&#125;,
+            series: [&#123;
+                name: <span class="hljs-string">'销量'</span>,
+                type: <span class="hljs-string">'bar'</span>,
+                data: [<span class="hljs-number">5</span>, <span class="hljs-number">20</span>, <span class="hljs-number">36</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>]
+            &#125;]
+        &#125;;</code></pre></div><p>6.将配置项设置给echarts实例对象</p><div class="hljs"><pre><code class="hljs js">myChart.setOption(option);</code></pre></div><h4 id="2-Echarts基础配置"><a href="#2-Echarts基础配置" class="headerlink" title="2.Echarts基础配置"></a>2.Echarts基础配置</h4><ul><li>series（系列）<br>每个系列通过 <code>series.type</code> 决定自己的图表类型（图表数据，指定什么类型的图表，可以多个图表重叠）。</li><li>xAxis：直角坐标系 grid 中的 x 轴</li><li>yAxis：直角坐标系 grid 中的 y 轴</li><li>grid：直角坐标系内绘图网格</li><li>title：标题组件</li><li>tooltip：提示框组件</li><li>legend：图例组件</li><li>color：调色盘颜色列表</li><li>boundaryGap:<br>坐标轴两边留白策略，类目轴中 boundaryGap 可以配置为 true 和 false。默认为 true，可以保证刻度线和标签对齐。这时候刻度只是作为分隔线，标签和数据点都会在两个刻度之间的带(band)中间。<img src="https://img-blog.csdnimg.cn/20200608161640464.png" srcset="/img/loading.gif" alt="在这里插入图片描述"></li><li>数据堆叠，同个类目轴上系列配置相同的<code>stack</code>值后 后一个系列的值会在前一个系列的值上相加。</li></ul><p>示例：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">let</span> option = &#123;
+			<span class="hljs-comment">// color设置线条的颜色 注意后面是个数组</span>
+        	color: [<span class="hljs-string">'pink'</span>, <span class="hljs-string">'red'</span>, <span class="hljs-string">'green'</span>, <span class="hljs-string">'skyblue'</span>],
+       		 <span class="hljs-comment">// 设置图表的标题</span>
+		    title: &#123;
+		        text: <span class="hljs-string">'折线图堆叠123'</span>
+		    &#125;,
+		    <span class="hljs-comment">// 图表的提示框组件</span>
+		    tooltip: &#123;
+		    <span class="hljs-comment">// 触发方式</span>
+            trigger: <span class="hljs-string">'axis'</span>,
+            <span class="hljs-comment">// 坐标轴指示器，坐标轴触发有效</span>
+            axisPointer: &#123;
+                type: <span class="hljs-string">'shadow'</span>  <span class="hljs-comment">// 默认为直线，可选为：'line' | 'shadow'</span>
+            &#125;
+        &#125;,
+        <span class="hljs-comment">// 图例组件</span>
+	    legend: &#123;
+	       <span class="hljs-comment">// series里面有了 name值，则 legend里面的data可以删掉</span>
+	    &#125;,
+	    <span class="hljs-comment">// 网格配置  grid可以控制线形图 柱状图 图表大小</span>
+        grid: &#123;
+            top: <span class="hljs-string">"10%"</span>,
+            left: <span class="hljs-string">"22%"</span>,
+            bottom: <span class="hljs-string">"10%"</span>，
+            <span class="hljs-comment">// 是否显示刻度标签 如果是true 就显示， false则不显示</span>
+           containLabel: <span class="hljs-literal">true</span>
+        &#125;,
+        <span class="hljs-comment">// 工具箱组件  可以另存为图片等功能</span>
+	    toolbox: &#123;
+	        feature: &#123;
+	            saveAsImage: &#123;&#125;
+	        &#125;
+	    &#125;,
+	    <span class="hljs-comment">// 设置x轴的相关配置</span>
+        xAxis: &#123;
+            show:<span class="hljs-literal">false</span>
+        &#125;,
+        <span class="hljs-comment">// 设置y轴的相关配置</span>
+        yAxis: [
+            &#123;
+                type: <span class="hljs-string">'category'</span>,
+                inverse: <span class="hljs-literal">true</span>,
+                data: [<span class="hljs-string">"HTML5"</span>, <span class="hljs-string">"CSS3"</span>, <span class="hljs-string">"javascript"</span>, <span class="hljs-string">"VUE"</span>, <span class="hljs-string">"NODE"</span>],
+                <span class="hljs-comment">//不显示y轴线条</span>
+                axisLine: &#123;
+                    	show: <span class="hljs-literal">false</span>
+                    	<span class="hljs-comment">// 如果想要设置单独的线条样式 </span>
+					    <span class="hljs-comment">// lineStyle: &#123;</span>
+					     	<span class="hljs-comment">//    color: "rgba(255,255,255,.1)",</span>
+					       <span class="hljs-comment">//    width: 1,</span>
+					       <span class="hljs-comment">//    type: "solid"</span>
+					      <span class="hljs-comment">//  &#125;</span>
+                        &#125;,
+                <span class="hljs-comment">// 不显示刻度</span>
+                axisTick: &#123;
+                show: <span class="hljs-literal">false</span>
+                &#125;,
+               Y轴的文字颜色和大小
+                axisLabel:&#123;
+                    color:<span class="hljs-string">"#fff"</span>，
+                    fontSize: <span class="hljs-string">"12"</span>
+                &#125;，
+                <span class="hljs-comment">// y 轴分隔线样式</span>
+			   splitLine: &#123;
+			       lineStyle: &#123;
+			          color: <span class="hljs-string">"rgba(255,255,255,.1)"</span>
+			        &#125;
+			   &#125;
+            &#125;,
+            &#123;
+                type: <span class="hljs-string">'category'</span>,
+                inverse: <span class="hljs-literal">true</span>,
+                data: [<span class="hljs-number">702</span>, <span class="hljs-number">350</span>, <span class="hljs-number">610</span>, <span class="hljs-number">793</span>, <span class="hljs-number">664</span>],
+                <span class="hljs-comment">//不显示y轴线条</span>
+                axisLine: &#123;
+                    show: <span class="hljs-literal">false</span>
+                        &#125;,
+                <span class="hljs-comment">// 不显示刻度</span>
+                axisTick: &#123;
+                show: <span class="hljs-literal">false</span>
+                &#125;,
+                
+                axisLabel:&#123;
+                    color:<span class="hljs-string">"#fff"</span>,
+                    fontSize:<span class="hljs-number">12</span>
+                &#125;
+            &#125;,
+        ],
+        <span class="hljs-comment">// 系列图表配置 它决定着显示那种类型的图表</span>
+        series: [
+            &#123;
+                name: <span class="hljs-string">'bar'</span>,
+                type: <span class="hljs-string">'bar'</span>,
+                <span class="hljs-comment">// 柱子之间的距离</span>
+                barCategoryGap:<span class="hljs-number">50</span>,
+                <span class="hljs-comment">// 修改柱子宽度</span>
+                barWidth:<span class="hljs-number">10</span>,
+                itemStyle:&#123;
+                		 <span class="hljs-comment">// 修改柱子圆角</span>
+                        barBorderRadius:<span class="hljs-number">20</span>,
+                        <span class="hljs-comment">//给 itemStyle  里面的color 属性设			置一个 返回值函数</span>
+                        <span class="hljs-comment">// params 传进来的是柱子对象</span>
+                        color:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">params</span>)</span>&#123;
+                        <span class="hljs-comment">// dataIndex 是当前柱子的索引号</span>
+                        <span class="hljs-keyword">return</span> myColor[params.dataIndex];
+                        &#125; 
+                &#125;,
+                data: [<span class="hljs-number">70</span>, <span class="hljs-number">34</span>, <span class="hljs-number">60</span>, <span class="hljs-number">78</span>, <span class="hljs-number">69</span>],
+                <span class="hljs-comment">// 图形上的文本标签</span>
+                label:&#123;
+                    normal:&#123;
+                        show: <span class="hljs-literal">true</span>,
+                        <span class="hljs-comment">// 图形内显示</span>
+                        position: <span class="hljs-string">"inside"</span>,
+                        <span class="hljs-comment">// 文字的显示格式   &#123;c&#125; 会自动的解析为 数据  data里面的数据</span>
+                        formatter: <span class="hljs-string">"&#123;c&#125;%"</span>
+                    &#125;
+                &#125;,
+                yAxisIndex: <span class="hljs-number">0</span>, <span class="hljs-comment">//层级关系</span>
+            &#125;,
+            &#123;
+                name: <span class="hljs-string">'box'</span>,
+                type: <span class="hljs-string">'bar'</span>,
+                barCategoryGap: <span class="hljs-number">50</span>,
+                barWidth: <span class="hljs-number">15</span>,
+                itemStyle: &#123;
+                    color: <span class="hljs-string">"none"</span>,
+                    borderColor: <span class="hljs-string">"#00c1de"</span>,
+                    borderWidth: <span class="hljs-number">3</span>,
+                    barBorderRadius: <span class="hljs-number">15</span>
+                &#125;,
+                data: [<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>],
+                yAxisIndex: <span class="hljs-number">1</span>, <span class="hljs-comment">//层级关系</span>
+            &#125;
+        ]
+    &#125;;</code></pre></div><p>补充知识点：<br>1.折线类型图表把折线修饰为圆滑 ，在series 数据中添加 smooth 为 true<br>2.带有直角坐标系的比如折线图、柱状图是 grid修改图形大小，而饼形图是通过 radius 修改大小<br>3.饼图图形上的文本标签可以控制饼形图的文字的一些样式， label 对象中设置</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// 文本标签控制饼形图文字的相关样式， 注意它是一个对象</span>
+       label: &#123;
+         fontSize: <span class="hljs-number">10</span>
+       &#125;,</code></pre></div><p>4.引导线调整，在series对象里面的 labelLine 对象设置</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// 引导线调整</span>
+      labelLine: &#123;
+       <span class="hljs-comment">// 连接扇形图线长</span>
+        length: <span class="hljs-number">6</span>,
+       <span class="hljs-comment">// 连接文字线长</span>
+       length2: <span class="hljs-number">8</span>
+      &#125;</code></pre></div><p>5.地图放大通过 zoom ，设置为数字</p><h3 id="项目使用的技术："><a href="#项目使用的技术：" class="headerlink" title="项目使用的技术："></a>项目使用的技术：</h3><ul><li><p>div + css</p></li><li><p>flex 布局</p></li><li><p>Less （在html页面中需导入对应的css文件，在VScode中安装Easy LESS插件可以直接把less文件转成css文件）</p></li><li><p>原生js</p><p>注意：每个图表指定配置项和数据(option)需要使用立即执行函数或者在函数中使用let声明变量，避免命名冲突</p></li><li><p>rem适配</p></li><li><p>引用淘宝的flexible.js 把屏幕分为 24 等份</p></li><li><p>VScode中安装cssrem插件，并修改cssrem 插件的基准值为 80px<br><img src="https://img-blog.csdnimg.cn/20200608181816692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" alt="在这里插入图片描述">注：别忘记重启vscode软件保证生效</p></li></ul></article><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/ECharts/">ECharts</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/ECharts/">ECharts</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-6"></div><div class="post-next col-6"><a href="/2020/06/05/WebAPI/"><span class="hidden-mobile">WebAPI</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></div></div></div><div class="comments" id="comments"></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div>©2020 By TQ</div><div>Power by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span></div></div><p id="hitokoto">获取中...</p></footer><style>#hitokoto{text-align:center;color:#fff;background-color:rgba(10,10,10,.8);margin-bottom:0;padding:10px 0}</style><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="/js/clipboard-use.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","数据可视化ECharts项目&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script>var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r,t){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>var now = new Date();
+  function createtime(){
+      var grt= new Date("05/27/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  fetch('https://v1.hitokoto.cn/')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+      })
+      .catch(console.error)</script></body></html>
