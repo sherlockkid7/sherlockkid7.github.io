@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png"><link rel="icon" type="image/png" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="rgba(10,10,10,.7)"><meta name="description" content=""><meta name="author" content="tq"><meta name="keywords" content=""><title>Webpack - TQ个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="/css/main.css"><meta name="generator" content="Hexo 4.2.1"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>TQ个人博客</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(/img/post.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-06-16 23:18">2020年6月16日 晚上</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 2.1k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 27 分钟</span></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><p><img src="https://img-blog.csdnimg.cn/20200616225712689.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjY4NDg2MA==,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" alt="在这里插入图片描述"></p><h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><h3 id="1-基本概述"><a href="#1-基本概述" class="headerlink" title="1.基本概述"></a>1.基本概述</h3><p>是一个现代的JavaScript应用的静态模块打包工具</p><h3 id="2-安装依赖"><a href="#2-安装依赖" class="headerlink" title="2.安装依赖"></a>2.安装依赖</h3><p>1.首先需要安装Node.js（Node.js自带了软件包管理工具npm）</p><p>2.全局安装webpack：运行npm i webpack -g全局安装webpack，这样就能在全局使用webpack的命令</p><p>3.局部安装webpack：在项目根目录中运行npm i webpack –save-dev安装到项目依赖中</p><p>为什么全局安装后，还需要局部安装呢</p><ul><li>在终端直接执行webpack命令，使用的全局安装的webpack（只有那些安装到全局 -g 的工具，才能在终端中正常执行）</li><li>当在package.json中定义了scripts时，其中包含了webpack命令，那么使用的是局部webpack<br>注意：还需安装npm i webpack-cli -D</li></ul><h3 id="3-准备工作"><a href="#3-准备工作" class="headerlink" title="3.准备工作"></a>3.准备工作</h3><ul><li><p><strong>npm init</strong> 初始化项目，使用npm管理项目中的依赖包</p></li><li><p>创建项目基本的目录结构 dist 、src等</p><p>文件和文件夹解析：</p><ul><li>dist文件夹：用于存放之后打包的文件</li><li>src文件夹：用于存放我们写的源文件<ul><li>main.js：项目的入口文件。</li><li>mathUtils.js：定义了一些数学工具函数，可以在其他地方引用，并且使用。</li></ul></li><li>index.html：浏览器打开展示的首页html</li><li>package.json：通过npm init生成的，npm包管理的文件</li></ul></li><li><p>js文件的打包</p><p>使用webpack的指令：webpack src/js/main.js dist/bundle.js</p></li><li><p>使用打包后的文件</p><p>bundle.js文件，是webpack处理了项目直接文件依赖后生成的一个js文件，我们只需要将这个js文件在index.html中引入即可</p></li></ul><h3 id="4-Webpack配置"><a href="#4-Webpack配置" class="headerlink" title="4.Webpack配置"></a>4.Webpack配置</h3><ul><li><p>项目根目录中创建一个webpack.config.js文件。</p></li><li><p>webpack.config.js中配置指定入口文件和输出文件的路径</p></li><li><p>package.json中定义启动</p><p>可以在package.json的scripts中定义自己的执行脚本。<br><code>&quot;dev&quot;: &quot;webpack&quot;</code><br>执行命令 ： npm run dev<br>package.json中的scripts的脚本在执行时，会按照一定的顺序寻找命令对应的位置。首先，会寻找本地的node_modules/.bin路径中对应的命令。如果没有找到，会去全局的环境变量中寻找。</p></li></ul><h3 id="5-loader的使用"><a href="#5-loader的使用" class="headerlink" title="5.loader的使用"></a>5.loader的使用</h3><h4 id="5-1loader使用过程"><a href="#5-1loader使用过程" class="headerlink" title="5.1loader使用过程"></a>5.1loader使用过程</h4><p>步骤一：通过npm安装需要使用的loader<br>步骤二：在webpack.config.js中的modules关键字下进行配置</p><h4 id="5-2css文件处理"><a href="#5-2css文件处理" class="headerlink" title="5.2css文件处理:"></a>5.2css文件处理:</h4><p>1.安装 cnpm i style-loader css-loader –save-dev</p><p>2.修改webpack.config.js这个配置文件：</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-built_in">module</span>: &#123; <span class="hljs-comment">// 用来配置第三方loader模块的</span>
+        rules: [ <span class="hljs-comment">// 文件的匹配规则</span>
+            &#123; <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-attr">use</span>: [<span class="hljs-string">'style-loader'</span>, <span class="hljs-string">'css-loader'</span>] &#125;<span class="hljs-comment">//处理css文件的规则</span>
+        ]
+    &#125;</code></pre></div><p>注意：</p><ul><li>use表示使用哪些模块来处理test所匹配到的文件；</li><li>use中相关loader模块的调用顺序是从后向前调用的；</li><li>css-loader只负责加载css文件</li><li>style-loader负责将css具体样式嵌入到文档中</li></ul><h4 id="5-3less文件处理"><a href="#5-3less文件处理" class="headerlink" title="5.3less文件处理"></a>5.3less文件处理</h4><p>1.安装运行cnpm i less-loader less -D(-D是–save-dev的简写)<br>2.修改webpack.config.js这个配置文件：</p><div class="hljs"><pre><code class="hljs js">&#123; <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.less$/</span>, <span class="hljs-attr">use</span>: [<span class="hljs-string">'style-loader'</span>, <span class="hljs-string">'css-loader'</span>, <span class="hljs-string">'less-loader'</span>] &#125;</code></pre></div><p>注意：这里还安装了less，因为webpack会使用less对less文件进行编译</p><h4 id="5-4sass文件处理"><a href="#5-4sass文件处理" class="headerlink" title="5.4sass文件处理"></a>5.4sass文件处理</h4><p>1.安装 cnpm i sass-loader node-sass –save-dev<br>2.在webpack.config.js中添加处理sass文件的loader模块：</p><div class="hljs"><pre><code class="hljs js">&#123; <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.scss$/</span>, <span class="hljs-attr">use</span>: [<span class="hljs-string">'style-loader'</span>, <span class="hljs-string">'css-loader'</span>, <span class="hljs-string">'sass-loader'</span>] &#125;</code></pre></div><p>注意：有时候使用npm i node-sass -D装不上，这时候，就必须使用 cnpm i node-sass -D</p><h4 id="5-5图片文件处理-（url-loader）"><a href="#5-5图片文件处理-（url-loader）" class="headerlink" title="5.5图片文件处理 （url-loader）"></a>5.5图片文件处理 （url-loader）</h4><p>1.cnpm i url-loader file-loader –save-dev<br>2.在webpack.config.js中添加loader模块：</p><div class="hljs"><pre><code class="hljs js">&#123; 
+    test: <span class="hljs-regexp">/\.(png|jpg|gif)$/</span>, 
+    use: [
+        &#123;
+        loader:<span class="hljs-string">'url-loader'</span> ,
+    	option:&#123;
+            limit:<span class="hljs-number">8196</span>,
+            name:<span class="hljs-string">'img/[name].[hash:8].[ext]'</span>
+            <span class="hljs-comment">//可以在options中添加上如下选项:</span>
+            <span class="hljs-comment">//img：文件要打包到的文件夹</span>
+            <span class="hljs-comment">//name：获取图片原来的名字，放在该位置</span>
+            <span class="hljs-comment">//hash:8：为了防止图片名称冲突，依然使用hash，但是我们只保留8位</span>
+            <span class="hljs-comment">//ext：使用图片原来的扩展名</span>
+        &#125;
+        ]
+&#125;</code></pre></div><ul><li>可以通过limit指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码</li></ul><h4 id="5-6ES6语法处理-js兼容性处理"><a href="#5-6ES6语法处理-js兼容性处理" class="headerlink" title="5.6ES6语法处理(js兼容性处理)"></a>5.6ES6语法处理(js兼容性处理)</h4><p>1.安装<br>npm i babel-loader @babel/core core-js -D<br>npm i @babel/preset-env -D</p><p>2.配置</p><div class="hljs"><pre><code class="hljs js"> &#123; 
+	test: <span class="hljs-regexp">/\.js$/</span>, 
+	loader: <span class="hljs-string">'babel-loader'</span>, 
+	<span class="hljs-comment">//排除 node_modules 目录</span>
+	exclude: <span class="hljs-regexp">/node_modules/</span> ,
+	options:
+	<span class="hljs-comment">//预设：指示babel做怎么样的兼容性处理</span>
+	&#123;
+	presets:[
+	<span class="hljs-string">'@babel/preset-env'</span>，						    
+	&#123;
+		<span class="hljs-comment">//按需加载</span>
+		useBuiltIns:<span class="hljs-string">'usage'</span>,
+		<span class="hljs-comment">//指定corejs版本</span>
+		corejs&#123;
+		version:<span class="hljs-number">3</span>
+		&#125;,
+		<span class="hljs-comment">//指定兼容性做到哪个版本浏览器</span>
+		targets&#123;
+			chrome:<span class="hljs-string">'60'</span>,
+			firefix:<span class="hljs-string">'60'</span>,
+			ie:<span class="hljs-string">'9'</span>,
+			safari:<span class="hljs-string">'10'</span>,
+			edge:<span class="hljs-string">'17'</span>
+		&#125;
+	&#125;
+	]
+&#125;
+&#125;</code></pre></div><h4 id="5-7-vue文件封装处理"><a href="#5-7-vue文件封装处理" class="headerlink" title="5.7.vue文件封装处理"></a>5.7.vue文件封装处理</h4><p>1.安装vue-loader和vue-template-compiler<br>npm install vue-loader vue-template-compiler –save-dev<br>2.修改webpack.config.js的配置文件：</p><div class="hljs"><pre><code class="hljs js">&#123;
+	test:<span class="hljs-regexp">/\.vue$/</span>,
+	use:[<span class="hljs-string">'vue-loader'</span>]
+&#125;</code></pre></div><h3 id="6-plugin"><a href="#6-plugin" class="headerlink" title="6.plugin"></a>6.plugin</h3><h4 id="6-1基本介绍"><a href="#6-1基本介绍" class="headerlink" title="6.1基本介绍"></a>6.1基本介绍</h4><p>plugin是插件的意思，通常是用于对某个现有的架构进行扩展。<br>webpack中的插件，就是对webpack现有功能的各种扩展，比如打包优化，文件压缩等等。</p><h4 id="6-2使用过程"><a href="#6-2使用过程" class="headerlink" title="6.2使用过程"></a>6.2使用过程</h4><p>步骤一：通过npm安装需要使用的plugins(某些webpack已经内置的插件不需要安装)<br>步骤二：在webpack.config.js中的plugins中配置插件。</p><h4 id="6-3添加版权的Plugin"><a href="#6-3添加版权的Plugin" class="headerlink" title="6.3添加版权的Plugin"></a>6.3添加版权的Plugin</h4><p>该插件名字叫BannerPlugin，属于webpack自带的插件。</p><p>按照下面的方式来修改webpack.config.js的文件：</p><div class="hljs"><pre><code class="hljs js">plugins:[
+	<span class="hljs-keyword">new</span> webpack.BannerPlugin(<span class="hljs-string">'最终版权归某某人所有'</span>)
+]</code></pre></div><h4 id="6-4打包html的plugin-HtmlWebpackPlugin插件"><a href="#6-4打包html的plugin-HtmlWebpackPlugin插件" class="headerlink" title="6.4打包html的plugin:HtmlWebpackPlugin插件"></a>6.4打包html的plugin:HtmlWebpackPlugin插件</h4><p>HtmlWebpackPlugin插件可以为我们做这些事情：</p><ul><li>自动生成一个index.html文件(可以指定模板来生成)</li><li>将打包的js文件，自动通过script标签插入到body中</li></ul><p>1.安装HtmlWebpackPlugin插件<br>npm install html-webpack-plugin –save-dev<br>2.使用插件，修改webpack.config.js文件中plugins部分的内容如下：</p><ul><li><p>这里的template表示根据什么模板来生成index.html</p></li><li><p>另外，我们需要删除之前在output中添加的publicPath属性,否则插入的script标签中的src可能会有问题</p><div class="hljs"><pre><code class="hljs js">plugins:[
+	<span class="hljs-keyword">new</span> HtmlWebpackPlugin(&#123;
+		template:<span class="hljs-string">'./src/index.html'</span>
+	&#125;)
+]</code></pre></div></li></ul><h3 id="7-本地开发服务器-devserver"><a href="#7-本地开发服务器-devserver" class="headerlink" title="7.本地开发服务器(devserver)"></a>7.本地开发服务器(devserver)</h3><p>实现代码实时打包编译，当修改代码之后，会自动进行打包构建，浏览器自动刷新。<br>特点：只会在内存中编译打包，不会有任何输出</p><p>1.运行cnpm i webpack-dev-server –save-dev安装到开发依赖</p><p>2.devserver也是作为webpack中的一个选项，选项本身可以设置如下属性：</p><ul><li>contentBase：为哪一个文件夹提供本地服务，默认是根文件夹，我们这里要填写./dist</li><li>port：端口号</li><li>historyApiFallback：在SPA页面中，依赖HTML5的history模式</li></ul><p>3.webpack.config.js文件配置修改如下：<br>我们可以再配置另外一个scripts：–open参数表示直接打开浏览器</p><h3 id="8-示例"><a href="#8-示例" class="headerlink" title="8.示例"></a>8.示例</h3><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// webpack是基于Node进行构建的，webpack的配置文件中，任何合法的Node代码都是支持的</span>
+<span class="hljs-comment">// const path = require('path');</span>
+
+<span class="hljs-comment">// 如果要配置插件，需要在导出的对象中，挂载一个 plugins 节点</span>
+<span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>);
+<span class="hljs-comment">//提取js中的css成单独文件</span>
+<span class="hljs-keyword">const</span> MiniCssExtractPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mini-css-extract-plugin'</span>);
+<span class="hljs-keyword">const</span> OptimizeCssAssetsWebpackPlugin = <span class="hljs-built_in">require</span> (<span class="hljs-string">'optimize-css-assets-webpack-plugin'</span>);
+<span class="hljs-comment">// const VueLoaderPlugin = require('vue-loader/lib/plugin');</span>
+<span class="hljs-comment">// const webpack = require('webpack');</span>
+
+<span class="hljs-comment">// 设置nodejs环境变量:决定使用browserslist的那个环境</span>
+<span class="hljs-comment">// process.env.NODE_ENV ='development';</span>
+
+<span class="hljs-comment">// 复用loader</span>
+<span class="hljs-keyword">const</span> commentCSSLoader = [
+    MiniCssExtractPlugin.loader, 
+    <span class="hljs-string">'css-loader'</span>,
+    &#123;
+        <span class="hljs-comment">// 需要在package.json中定义browserslist</span>
+        <span class="hljs-comment">/*</span>
+<span class="hljs-comment">        "browserslist": &#123;</span>
+<span class="hljs-comment">            "development": [</span>
+<span class="hljs-comment">              "last 1 chrome version",</span>
+<span class="hljs-comment">              "last 1 firefox version",</span>
+<span class="hljs-comment">              "last 1 safari version"</span>
+<span class="hljs-comment">            ],</span>
+<span class="hljs-comment">            "production": [</span>
+<span class="hljs-comment">              "&gt;0.2%",</span>
+<span class="hljs-comment">              "not dead",</span>
+<span class="hljs-comment">              "not op_mini all"</span>
+<span class="hljs-comment">            ]</span>
+<span class="hljs-comment">          &#125;*/</span>
+		<span class="hljs-comment">//css的兼容性处理 npm i postcss-loader postcss-preset-env -D        </span>
+        loader:<span class="hljs-string">'postcss-loader'</span>,
+        options:&#123;
+            ident:<span class="hljs-string">'postcss'</span>,
+            plugins:<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>[
+                <span class="hljs-built_in">require</span>(<span class="hljs-string">'postcss-preset-env'</span>)()
+            ]
+        &#125; 
+    &#125;
+]
+<span class="hljs-built_in">module</span>.exports = &#123;
+    <span class="hljs-comment">// mode:'production',</span>
+    mode:<span class="hljs-string">'development'</span>,
+    entry: <span class="hljs-string">'./src/js/main.js'</span>, <span class="hljs-comment">// 入口文件</span>
+    output:&#123;
+        filename:<span class="hljs-string">'js/bundle.js'</span>,
+        path: __dirname + <span class="hljs-string">'/build'</span>
+    &#125;,
+    <span class="hljs-built_in">module</span>:&#123;
+        rules:[
+            &#123; 
+                test: <span class="hljs-regexp">/\.css$/</span>, 
+                use: [...commentCSSLoader] 
+            &#125;,
+            &#123; 
+                test: <span class="hljs-regexp">/\.less$/</span>, 
+                use: [...commentCSSLoader,
+                    <span class="hljs-string">'less-loader'</span>] 
+            &#125;, 
+            &#123; 
+                test: <span class="hljs-regexp">/\.(jpg|png|gif|bmp|jpeg)$/</span>,
+                use: &#123;
+                    loader:<span class="hljs-string">'url-loader'</span>,
+                    options:&#123;
+                        esModule: <span class="hljs-literal">false</span>,
+                        limit: <span class="hljs-number">10240</span>,
+                        name:<span class="hljs-string">'[name].[ext]-[hash:8]'</span>,
+                        outputPath:<span class="hljs-string">'imgs'</span>
+                    &#125;
+                &#125;
+            &#125;, <span class="hljs-comment">// 处理图片路径的loader</span>
+            &#123;
+                test:<span class="hljs-regexp">/\.html$/</span>,
+                loader:<span class="hljs-string">'html-loader'</span>
+            &#125;,
+            &#123; 
+                test: <span class="hljs-regexp">/\.(ttf|eot|svg|woff|woff2)$/</span>, 
+                use: <span class="hljs-string">'url-loader'</span> ,
+                outputPath:<span class="hljs-string">'font'</span>
+            &#125;,
+            <span class="hljs-comment">//自己写的js语法检查</span>
+<span class="hljs-comment">//npm i eslint-loader eslint eslint-config-airbnb-base eslint-plugin-import -D</span>
+            &#123;
+                <span class="hljs-comment">// 在package.json中配置eslintConfig</span>
+                test:<span class="hljs-regexp">/\.js$/</span>,
+                exclude:<span class="hljs-regexp">/node_modules/</span>,
+                <span class="hljs-comment">// 优先执行</span>
+                enforce:<span class="hljs-string">'pre'</span>,
+                loader:<span class="hljs-string">'eslint-loader'</span>,
+                options:&#123;
+                    <span class="hljs-comment">// 自动修复eslint的错误</span>
+                    fix:<span class="hljs-literal">true</span>
+                &#125;
+            &#125;,
+            &#123;
+                test:<span class="hljs-regexp">/\.js$/</span>,
+                exclude:<span class="hljs-regexp">/node_modules/</span>,
+                loader:<span class="hljs-string">'babel-loader'</span>,
+                options:&#123;
+                    presets:[
+                        [
+                            <span class="hljs-string">'@babel/preset-env'</span>,
+                            &#123;
+                                useBuiltIns:<span class="hljs-string">'usage'</span>,
+                                corejs:&#123;<span class="hljs-attr">version</span>:<span class="hljs-number">3</span>&#125;,
+                                targets:&#123;
+                                    chrome:<span class="hljs-string">'60'</span>,
+                                    firefox:<span class="hljs-string">'60'</span>,
+                                    ie:<span class="hljs-string">'9'</span>,
+                                    safari:<span class="hljs-string">'10'</span>,
+                                    edge:<span class="hljs-string">'17'</span>
+                                &#125;
+
+                            &#125;
+                        ]
+                    ]
+                &#125;
+            &#125;
+            
+    ]
+    &#125;,
+    plugins:[
+        <span class="hljs-keyword">new</span> HtmlWebpackPlugin(&#123;
+            template:<span class="hljs-string">'./src/index.html'</span>,
+            minify:&#123;
+                collapseWhitespace:<span class="hljs-literal">true</span>,
+                removeComments:<span class="hljs-literal">true</span>
+            &#125;
+        &#125;),
+        <span class="hljs-keyword">new</span> MiniCssExtractPlugin(&#123;
+            filename:<span class="hljs-string">'css/built.css'</span>
+        &#125;),
+        <span class="hljs-keyword">new</span> OptimizeCssAssetsWebpackPlugin(),
+        <span class="hljs-comment">// new VueLoaderPlugin(),</span>
+        <span class="hljs-comment">// new webpack.HotModuleReplacementPlugin()</span>
+    ],
+    <span class="hljs-comment">// resolve: &#123;</span>
+    <span class="hljs-comment">//     alias: &#123; // 修改Vue被导入时包的路径</span>
+    <span class="hljs-comment">//       "vue$": "vue/dist/vue.js"</span>
+    <span class="hljs-comment">//     &#125;</span>
+    <span class="hljs-comment">// &#125;,</span>
+    devServer: &#123;
+        open:<span class="hljs-literal">true</span>,
+        port:<span class="hljs-number">3000</span>,
+        compress:<span class="hljs-literal">true</span>,
+        historyApiFallback: <span class="hljs-literal">true</span>,  
+    &#125;
+&#125;</code></pre></div></article><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/Webpack/">Webpack</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/Webpack/">Webpack</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-6"></div><div class="post-next col-6"><a href="/2020/06/16/Vue%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/"><span class="hidden-mobile">Vue模块化开发——学习笔记三</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></div></div></div><div class="comments" id="comments"></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div>©2020 By TQ</div><div>Power by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span></div></div><p id="hitokoto">获取中...</p></footer><style>#hitokoto{text-align:center;color:#fff;background-color:rgba(10,10,10,.8);margin-bottom:0;padding:10px 0}</style><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="/js/clipboard-use.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","Webpack&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script>var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r,t){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>var now = new Date();
+  function createtime(){
+      var grt= new Date("05/27/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  fetch('https://v1.hitokoto.cn/')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+      })
+      .catch(console.error)</script></body></html>
