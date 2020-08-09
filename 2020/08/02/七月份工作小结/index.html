@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png"><link rel="icon" type="image/png" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="rgba(10,10,10,.7)"><meta name="description" content=""><meta name="author" content="tq"><meta name="keywords" content=""><title>七月份工作小结 - TQ个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="/css/main.css"><meta name="generator" content="Hexo 4.2.1"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>TQ个人博客</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(/img/post.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-08-02 15:49">2020年8月2日 下午</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 866 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 12 分钟</span></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><p>七月份刚进公司工作一周左右，主要工作内容写了手机端的一些页面和用vue写pc端的页面（未完成），还让做一个自适应的政府网站（还在跟进中），记录一下工作中遇到的问题。</p><h4 id="1-tab栏切换，利用原生js实现"><a href="#1-tab栏切换，利用原生js实现" class="headerlink" title="1.tab栏切换，利用原生js实现"></a>1.tab栏切换，利用原生js实现</h4><p>其实我一开始没写出来，后来还是查资料实现的。但是感觉有个问题，不利用js,在需要跳转的a标签链接到目标页面，也可以实现效果</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"data-title"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"title-item active"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-index</span>=<span class="hljs-string">"0"</span>&gt;</span>电瓶<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"title-item"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-index</span>=<span class="hljs-string">"1"</span>&gt;</span>绑定订单<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"title-item"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-index</span>=<span class="hljs-string">"2"</span>&gt;</span>解绑订单<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></div><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// tab切换</span>
+<span class="hljs-comment">// 获取tabar的值</span>
+<span class="hljs-keyword">const</span> dataTitle = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">".data-title"</span>);
+<span class="hljs-comment">// 获取切换展示的区域</span>
+<span class="hljs-keyword">const</span> lists = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">".data-list"</span>);
+
+dataTitle.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>&#123;
+    <span class="hljs-keyword">let</span> event = e || <span class="hljs-built_in">window</span>.event;
+    <span class="hljs-keyword">let</span> target = event.target;
+
+    <span class="hljs-keyword">let</span> filterOptions = target.getAttribute(<span class="hljs-string">"data-index"</span>);
+    <span class="hljs-comment">// 改变tabar样式</span>
+    <span class="hljs-keyword">if</span>(filterOptions)&#123;
+        <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">".title-item.active"</span>).forEach(<span class="hljs-function"><span class="hljs-params">btn</span> =&gt;</span> btn.classList.remove(<span class="hljs-string">"active"</span>));
+        target.parentNode.classList.add(<span class="hljs-string">"active"</span>);     
+    &#125;
+    <span class="hljs-comment">// 切换展示区域内容</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i&lt;lists.length;i++)&#123;
+        <span class="hljs-keyword">if</span>(filterOptions == i)&#123;
+            lists[i].style.display = <span class="hljs-string">"block"</span>;
+        &#125;<span class="hljs-keyword">else</span>&#123;
+            lists[i].style.display = <span class="hljs-string">"none"</span>;
+        &#125;
+
+    &#125;
+
+&#125;)</code></pre></div><h4 id="2-实现日历功能"><a href="#2-实现日历功能" class="headerlink" title="2.实现日历功能"></a>2.实现日历功能</h4><p>根据input原生实现的，利用原生js的方法还没研究过</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"date-des"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"date"</span> /&gt;</span></code></pre></div><p>简单的修改日期样式</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-comment">/*  修改日历控件类型 */</span>
+
+<span class="hljs-selector-pseudo">::-webkit-datetime-edit</span> &#123;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">1px</span>;
+&#125;
+
+<span class="hljs-comment">/*控制编辑区域的*/</span>
+<span class="hljs-selector-pseudo">::-webkit-datetime-edit-fields-wrapper</span> &#123;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+&#125;
+<span class="hljs-comment">/*控制年月日这个区域的*/</span>
+<span class="hljs-selector-pseudo">::-webkit-datetime-edit-text</span> &#123;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#BEBEBE</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> .<span class="hljs-number">1em</span>;
+&#125;
+<span class="hljs-comment">/*这是控制年月日之间的斜线或短横线的*/</span>
+<span class="hljs-selector-pseudo">::-webkit-datetime-edit-year-field</span> &#123;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#BEBEBE</span>;
+&#125;
+<span class="hljs-comment">/*控制年文字, 如2013四个字母占据的那片地方*/</span>
+<span class="hljs-selector-pseudo">::-webkit-datetime-edit-month-field</span> &#123;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#BEBEBE</span>;
+&#125;
+<span class="hljs-comment">/*控制月份*/</span>
+<span class="hljs-selector-pseudo">::-webkit-datetime-edit-day-field</span> &#123;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#BEBEBE</span>;
+&#125;
+<span class="hljs-comment">/*控制具体日子*/</span>
+<span class="hljs-selector-pseudo">::-webkit-inner-spin-button</span> &#123;
+    <span class="hljs-attribute">visibility</span>: hidden;
+&#125;
+ <span class="hljs-comment">/*这是控制下拉小箭头的*/</span>
+<span class="hljs-selector-pseudo">::-webkit-calendar-picker-indicator</span> &#123;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#BEBEBE</span>;
+&#125;
+<span class="hljs-comment">/*这是控制上下小箭头的*/</span>
+<span class="hljs-selector-pseudo">::-webkit-calendar-picker-indicator</span> &#123;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#BEBEBE</span>;
+&#125;
+<span class="hljs-selector-pseudo">::-webkit-clear-button</span> &#123;
+    <span class="hljs-attribute">display</span>: none;
+&#125;</code></pre></div><h4 id="3-图片上传功能"><a href="#3-图片上传功能" class="headerlink" title="3.图片上传功能"></a>3.图片上传功能</h4><p>利用webuploader插件实现，该功能没有做好，后面抽时间研究下</p><h4 id="4-打断换行"><a href="#4-打断换行" class="headerlink" title="4.打断换行"></a>4.打断换行</h4><p>对于一些数字，一行无法显示完，需要给当前父元素添加<code>word-break:break-all；</code>样式，打断换行显示</p><p>注：如果当前元素另一边有内容，需要给当前元素加上padding空出位置</p><h4 id="5-input框"><a href="#5-input框" class="headerlink" title="5.input框"></a>5.input框</h4><div class="hljs"><pre><code class="hljs css"> <span class="hljs-selector-tag">input</span> &#123;
+    <span class="hljs-attribute">display</span>:block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">30px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">30px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#acacac</span>;
+&#125;</code></pre></div><p>IOS系统手机端的输入框line-height不会起作用，无法实现文字居中，所以设置line-height为高度的一半（也可以不是一半），并且设置padding撑开剩余的高度</p><p>注：input属于行内替换元素，height/width/padding/margin均可用，效果等于块元素。最好设置成块元素。</p><h4 id="6-opacity"><a href="#6-opacity" class="headerlink" title="6.opacity"></a>6.opacity</h4><p>opacity有继承性，最好不要给父元素设置</p><h4 id="7-搜索框"><a href="#7-搜索框" class="headerlink" title="7.搜索框"></a>7.搜索框</h4><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">from</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sear-box "</span> <span class="hljs-attr">action</span>=<span class="hljs-string">""</span> <span class="hljs-attr">method</span>=<span class="hljs-string">""</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"f16"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"请输入关键词搜索"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sear-btn"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">from</span>&gt;</span></code></pre></div><h4 id="8-子元素设置margin-top会影响父元素的位置，给父元素设置padding-top-1px-可以避免"><a href="#8-子元素设置margin-top会影响父元素的位置，给父元素设置padding-top-1px-可以避免" class="headerlink" title="8.子元素设置margin-top会影响父元素的位置，给父元素设置padding-top:1px;可以避免"></a>8.子元素设置margin-top会影响父元素的位置，给父元素设置padding-top:1px;可以避免</h4><p>原因：父元素设置padding-top:1px;相当于设置了位置的上限。（不是太理解）</p></article><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/%E9%9A%8F%E8%AE%B0/">随记</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-6"></div><div class="post-next col-6"><a href="/2020/08/02/%E8%87%AA%E5%AD%A6%E5%89%8D%E7%AB%AF%E4%B8%80%E5%B9%B4%E5%B7%A6%E5%8F%B3%EF%BC%8C%E7%BB%88%E4%BA%8E%E6%89%BE%E5%88%B0%E5%B7%A5%E4%BD%9C%E4%BA%86/"><span class="hidden-mobile">自学前端一年左右，终于找到工作了!</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></div></div></div><div class="comments" id="comments"></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div>©2020 By TQ</div><div>Power by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span></div></div><p id="hitokoto">获取中...</p></footer><style>#hitokoto{text-align:center;color:#fff;background-color:rgba(10,10,10,.8);margin-bottom:0;padding:10px 0}</style><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="/js/clipboard-use.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","七月份工作小结&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script>var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r,t){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>var now = new Date();
+  function createtime(){
+      var grt= new Date("05/27/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  fetch('https://v1.hitokoto.cn/')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+      })
+      .catch(console.error)</script></body></html>
