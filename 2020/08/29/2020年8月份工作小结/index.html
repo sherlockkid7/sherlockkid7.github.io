@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png"><link rel="icon" type="image/png" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="rgba(10,10,10,.7)"><meta name="description" content=""><meta name="author" content="tq"><meta name="keywords" content=""><title>2020年8月份工作小结 - TQ个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/tomorrow-night.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css"><link rel="stylesheet" href="/css/main.css"><meta name="generator" content="Hexo 4.2.1"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>TQ个人博客</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2" id="background" parallax="true" style="background:url(/img/post.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-08-29 10:36">2020年8月29日 上午</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 1.1k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 15 分钟</span></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><p>进入前端行业，已经工作一个月了，期间时常迷茫以及不适应，感觉自己入错坑了，偶尔代码写的很顺利，才会找回一点点继续下去的信心。八月中旬的时候工作特别不顺，期间写了特别颓废的日记，每天在吐槽中硬着头皮熬下来。有时候不禁想前端这条路我到底走对了没，但是好像也没有回头路可让我走，希望时间可以见证我走过这段艰难岁月的胜利！（失败了，可能会没有勇气再重头打拼吧）</p><p>简单总结下工作内容以及遇到的问题，这个月主要是进行一个政府网站项目，前期写静态页面，中下旬进行置标、修改bug，最后几天着手写一个vue项目。</p><h4 id="1-flex布局的问题"><a href="#1-flex布局的问题" class="headerlink" title="1.flex布局的问题"></a>1.flex布局的问题</h4><p>之前没找到工作的时候，自己总结了flex布局的知识都忘光了。（知识时刻都在从大脑流逝，一生都学习不完）</p><p>需要让某元素中的盒子每两个排列一行，剩余盒子依次如此排列</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.father</span>&#123;
+<span class="hljs-attribute">display</span>:flex;
+<span class="hljs-attribute">flex-wrap</span>: wrap;
+&#125;
+<span class="hljs-selector-class">.box</span>&#123;
+<span class="hljs-attribute">flex</span>:<span class="hljs-number">1</span>;
+<span class="hljs-attribute">width</span>:<span class="hljs-number">50%</span>;
+<span class="hljs-attribute">max-width</span>:<span class="hljs-number">50%</span>;
+<span class="hljs-attribute">min-width</span>:<span class="hljs-number">50%</span>;
+&#125;</code></pre></div><h4 id="2-点击元素，让该元素下某个元素显示、隐藏"><a href="#2-点击元素，让该元素下某个元素显示、隐藏" class="headerlink" title="2.点击元素，让该元素下某个元素显示、隐藏"></a>2.点击元素，让该元素下某个元素显示、隐藏</h4><div class="hljs"><pre><code class="hljs js">$(<span class="hljs-string">"#rmore"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+     $(<span class="hljs-keyword">this</span>).find(<span class="hljs-string">'.more-list'</span>).stop().slideToggle();
+&#125;)</code></pre></div><h4 id="3-JS（jquery）实现的一些功能合集"><a href="#3-JS（jquery）实现的一些功能合集" class="headerlink" title="3. JS（jquery）实现的一些功能合集"></a>3. JS（jquery）实现的一些功能合集</h4><h5 id="1-判断文章内容为空，如果有且仅有一个附件，判断附件类型如果是pdf-直接打开；如果是其他附件直接下载"><a href="#1-判断文章内容为空，如果有且仅有一个附件，判断附件类型如果是pdf-直接打开；如果是其他附件直接下载" class="headerlink" title="1.判断文章内容为空，如果有且仅有一个附件，判断附件类型如果是pdf,直接打开；如果是其他附件直接下载"></a>1.判断文章内容为空，如果有且仅有一个附件，判断附件类型如果是pdf,直接打开；如果是其他附件直接下载</h5><div class="hljs"><pre><code class="hljs js">$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+	<span class="hljs-comment">// 获取文章内容</span>
+	<span class="hljs-keyword">var</span> txt = $(<span class="hljs-string">'#article'</span>).text();
+	<span class="hljs-comment">// 去除文章中包含的空格、换行、tab缩进等所有的空白</span>
+	txt=txt.trim().replace(<span class="hljs-regexp">/\s/g</span>,<span class="hljs-string">""</span>);
+	<span class="hljs-comment">// 当没有内容并且有且仅有一个附件</span>
+	<span class="hljs-keyword">if</span>(!txt &amp;&amp; ($(<span class="hljs-string">".attachments ul li"</span>).length==<span class="hljs-number">1</span>))&#123;
+		<span class="hljs-keyword">var</span> thisItem = $(<span class="hljs-string">".attachments ul li"</span>).eq(<span class="hljs-number">0</span>).find(<span class="hljs-string">'a'</span>);
+		<span class="hljs-comment">// 得到当前附件的href属性</span>
+		<span class="hljs-keyword">var</span> thisHref = thisItem.attr(<span class="hljs-string">'href'</span>);
+		<span class="hljs-comment">// 获取后缀名</span>
+		<span class="hljs-keyword">var</span> houzhui = getExt(thisHref);
+		<span class="hljs-comment">// 当前附件的名字</span>
+		<span class="hljs-keyword">var</span> thisName = thisItem.text().trim().replace(<span class="hljs-regexp">/\s/g</span>,<span class="hljs-string">""</span>)
+		<span class="hljs-keyword">if</span>(houzhui==<span class="hljs-string">'pdf'</span>)&#123;
+			<span class="hljs-built_in">window</span>.location.replace(thisHref);
+		&#125;<span class="hljs-keyword">else</span>&#123;
+			<span class="hljs-comment">// 下载附件</span>
+			download(thisHref,thisName);
+			<span class="hljs-comment">// 关闭文章页面</span>
+			setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;
+				<span class="hljs-built_in">window</span>.opener = <span class="hljs-literal">null</span>;
+				<span class="hljs-built_in">window</span>.open(<span class="hljs-string">''</span>, <span class="hljs-string">'_self'</span>);
+				<span class="hljs-built_in">window</span>.close();
+			&#125;,<span class="hljs-number">1000</span>)
+		&#125;
+	&#125;;
+	<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getExt</span>(<span class="hljs-params">filename</span>)</span>
+<span class="hljs-function">	</span>&#123;
+		<span class="hljs-keyword">var</span> a = filename.split(<span class="hljs-string">"."</span>);
+		<span class="hljs-keyword">if</span>( a.length === <span class="hljs-number">1</span> || ( a[<span class="hljs-number">0</span>] === <span class="hljs-string">""</span> &amp;&amp; a.length === <span class="hljs-number">2</span> ) ) &#123;
+			<span class="hljs-keyword">return</span> <span class="hljs-string">""</span>;
+		&#125;
+		<span class="hljs-keyword">return</span> a.pop();
+	&#125;;
+	<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">download</span>(<span class="hljs-params">url, filename</span>) </span>&#123;
+        <span class="hljs-keyword">return</span> fetch(url).then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.blob().then(<span class="hljs-function"><span class="hljs-params">blob</span> =&gt;</span> &#123;
+            <span class="hljs-keyword">let</span> a = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'a'</span>);
+            <span class="hljs-keyword">let</span> url = <span class="hljs-built_in">window</span>.URL.createObjectURL(blob);
+            a.href = url;
+            a.download = filename;
+            a.click();
+            <span class="hljs-built_in">window</span>.URL.revokeObjectURL(url);
+        &#125;))
+	&#125;
+&#125;)</code></pre></div><h5 id="2-去掉特定的词语，并展示到页面"><a href="#2-去掉特定的词语，并展示到页面" class="headerlink" title="2.去掉特定的词语，并展示到页面"></a>2.去掉特定的词语，并展示到页面</h5><div class="hljs"><pre><code class="hljs js">$(<span class="hljs-string">'.attachments &gt; .attachments-list &gt; li &gt; a'</span>).html(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.innerHTML.replace(<span class="hljs-regexp">/(附件：)/g</span>, <span class="hljs-string">''</span>)
+&#125;)</code></pre></div><h5 id="3-当a标签的href属性为’-’或者为空，a标签不能点击且不出现手指"><a href="#3-当a标签的href属性为’-’或者为空，a标签不能点击且不出现手指" class="headerlink" title="3.当a标签的href属性为’#’或者为空，a标签不能点击且不出现手指"></a>3.当a标签的<code>href</code>属性为’#’或者为空，a标签不能点击且不出现手指</h5><div class="hljs"><pre><code class="hljs js">$(<span class="hljs-string">".post-bg a"</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> href = $(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">"href"</span>);
+    <span class="hljs-keyword">if</span> (href == <span class="hljs-string">'#'</span> || href == <span class="hljs-string">''</span>) &#123;
+    $(<span class="hljs-keyword">this</span>).removeAttr(<span class="hljs-string">'href'</span>);
+    $(<span class="hljs-keyword">this</span>).removeAttr(<span class="hljs-string">'onclick'</span>);
+    $(<span class="hljs-keyword">this</span>).css(<span class="hljs-string">'cursor'</span>, <span class="hljs-string">'default'</span>);
+    &#125;
+&#125;)</code></pre></div><h5 id="4-兼容ie9浏览器"><a href="#4-兼容ie9浏览器" class="headerlink" title="4.兼容ie9浏览器"></a>4.兼容ie9浏览器</h5><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (navigator.appName === <span class="hljs-string">'Microsoft Internet Explorer'</span>) &#123;
+    <span class="hljs-comment">//判断是否是IE浏览器</span>
+    <span class="hljs-keyword">if</span> (navigator.userAgent.match(<span class="hljs-regexp">/Trident/i</span>) &amp;&amp; navigator.userAgent.match(<span class="hljs-regexp">/MSIE 9.0/i</span>)) &#123;
+    $(<span class="hljs-string">'.disclosure ul .frist'</span>).css(<span class="hljs-string">'background'</span>, <span class="hljs-string">'#166aab'</span>);
+    $(<span class="hljs-string">'.disclosure ul li'</span>).addClass(<span class="hljs-string">'bgcolor'</span>);
+    &#125;
+&#125;</code></pre></div><h5 id="5-二级菜单的展示与隐藏"><a href="#5-二级菜单的展示与隐藏" class="headerlink" title="5.二级菜单的展示与隐藏"></a>5.二级菜单的展示与隐藏</h5><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// 循环某元素的子元素，如果子元素下有二级子元素，移除当前子元素下a标签的href属性，显示图标</span>
+$(<span class="hljs-string">".more-list li"</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">if</span> ($(<span class="hljs-keyword">this</span>).find(<span class="hljs-string">".mtwo-list"</span>).find(<span class="hljs-string">"li"</span>).length &gt; <span class="hljs-number">0</span>) &#123;
+    $(<span class="hljs-keyword">this</span>).find(<span class="hljs-string">".list"</span>).removeAttr(<span class="hljs-string">'href'</span>);
+    $(<span class="hljs-keyword">this</span>).find(<span class="hljs-string">'.two-more'</span>).css(<span class="hljs-string">'display'</span>, <span class="hljs-string">'block'</span>);
+    &#125;
+&#125;)
+<span class="hljs-comment">// 点击子元素展示二级菜单，并改变图标样式</span>
+$(<span class="hljs-string">'.list'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    $(<span class="hljs-keyword">this</span>).next(<span class="hljs-string">".mtwo-list"</span>).stop().slideToggle();
+    $(<span class="hljs-keyword">this</span>).toggleClass(<span class="hljs-string">"active"</span>);
+&#125;)</code></pre></div><h5 id="6-手机端点击tabar栏，点击一次切换样式效果，双击实现跳转"><a href="#6-手机端点击tabar栏，点击一次切换样式效果，双击实现跳转" class="headerlink" title="6.手机端点击tabar栏，点击一次切换样式效果，双击实现跳转"></a>6.手机端点击<code>tabar</code>栏，点击一次切换样式效果，双击实现跳转</h5><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> cwidth = <span class="hljs-built_in">document</span>.documentElement.clientWidth;
+<span class="hljs-keyword">if</span> (cwidth &lt; <span class="hljs-number">1200</span>) &#123; 
+    $(<span class="hljs-string">'.news .hd li a'</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; 
+        $(<span class="hljs-string">'.news .hd li a'</span>).removeAttr(<span class="hljs-string">'href'</span>);
+        <span class="hljs-keyword">if</span>($(<span class="hljs-keyword">this</span>).parents(<span class="hljs-string">"li"</span>).hasClass(<span class="hljs-string">"on"</span>))&#123; 
+            $(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">'href'</span>,$(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">"m-href"</span>)); 
+        &#125; 
+    &#125;) 
+&#125;<span class="hljs-keyword">else</span> &#123; 
+    $(<span class="hljs-string">'.news .hd li a'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123; 
+        <span class="hljs-keyword">var</span> href=$(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">"m-href"</span>); 
+        $(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">'href'</span>, href);
+    &#125;) 
+&#125;</code></pre></div><h5 id="7-获取当前元素的高度，让其兄弟元素的高度与其一致"><a href="#7-获取当前元素的高度，让其兄弟元素的高度与其一致" class="headerlink" title="7.获取当前元素的高度，让其兄弟元素的高度与其一致"></a>7.获取当前元素的高度，让其兄弟元素的高度与其一致</h5><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> firstHeight = $(<span class="hljs-string">'.intro'</span>).outerHeight(<span class="hljs-literal">true</span>);
+$(<span class="hljs-string">'.tel'</span>).height(firstHeight);
+$(<span class="hljs-string">'.addre'</span>).height(firstHeight);</code></pre></div><h5 id="8-让分号后面的内容换行显示"><a href="#8-让分号后面的内容换行显示" class="headerlink" title="8.让分号后面的内容换行显示"></a>8.让分号后面的内容换行显示</h5><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> text = $(<span class="hljs-string">'.addre .office-desc'</span>).text().replace(<span class="hljs-regexp">/[;；]/g</span>, <span class="hljs-string">";&lt;br/&gt;"</span>);
+$(<span class="hljs-string">'.addre .office-desc'</span>).html(text);</code></pre></div><h5 id="9-特殊文字两行显示"><a href="#9-特殊文字两行显示" class="headerlink" title="9.特殊文字两行显示"></a>9.特殊文字两行显示</h5><div class="hljs"><pre><code class="hljs js"><span class="hljs-keyword">var</span> specail = $(<span class="hljs-string">".add-item a"</span>).get(<span class="hljs-number">12</span>);
+specail.style.lineHeight = <span class="hljs-string">"30px"</span>;
+<span class="hljs-keyword">var</span> string = <span class="hljs-string">'社区管理处'</span> + <span class="hljs-string">'&lt;br/&gt;'</span> + <span class="hljs-string">'(社区矫正管理总队)'</span>;
+specail.innerHTML = string;
+<span class="hljs-keyword">var</span> cwidth = <span class="hljs-built_in">document</span>.documentElement.clientWidth;
+<span class="hljs-keyword">if</span> (cwidth &lt; <span class="hljs-number">1200</span>) &#123;
+specail.style.lineHeight = <span class="hljs-string">".48rem"</span>;
+&#125;</code></pre></div><h5 id="10-返回顶部"><a href="#10-返回顶部" class="headerlink" title="10.返回顶部"></a>10.返回顶部</h5><div class="hljs"><pre><code class="hljs js">$(<span class="hljs-string">"#back-top"</span>).click(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    $(<span class="hljs-string">'html , body'</span>).animate(&#123;
+    scrollTop: <span class="hljs-number">0</span>
+    &#125;, <span class="hljs-string">'slow'</span>);
+&#125;)</code></pre></div></article><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/%E9%9A%8F%E8%AE%B0/">随记</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p><div class="post-prevnext row"><div class="post-prev col-6"></div><div class="post-next col-6"><a href="/2020/08/09/2020%E5%B9%B48%E6%9C%88%E7%AC%AC%E4%B8%80%E5%91%A8%E5%B7%A5%E4%BD%9C%E5%B0%8F%E7%BB%93/"><span class="hidden-mobile">2020年8月第一周工作小结</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></div></div></div><div class="comments" id="comments"></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><footer class="mt-5"><div class="text-center py-3"><div>©2020 By TQ</div><div>Power by <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span></div></div><p id="hitokoto">获取中...</p></footer><style>#hitokoto{text-align:center;color:#fff;background-color:rgba(10,10,10,.8);margin-bottom:0;padding:10px 0}</style><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script src="/js/clipboard-use.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","2020年8月份工作小结&nbsp;"],cursorChar:"|",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js"></script><script>anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script>var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){searchFunc(path,"local-search-input","local-search-result"),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script>!function(e,r,t){var o,n=[];e.requestAnimationFrame=e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)},function(t){var a=r.createElement("style");a.type="text/css";try{a.appendChild(r.createTextNode(t))}catch(e){a.styleSheet.cssText=t}r.getElementsByTagName("head")[0].appendChild(a)}(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o="function"==typeof e.onclick&&e.onclick,e.onclick=function(e){var t,a;o&&o(),t=e,(a=r.createElement("div")).className="heart",n.push({el:a,x:t.clientX-5,y:t.clientY-5,scale:1,alpha:1,color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),r.body.appendChild(a)},function e(){for(var t=0;t<n.length;t++)n[t].alpha<=0?(r.body.removeChild(n[t].el),n.splice(t,1)):(n[t].y--,n[t].scale+=.004,n[t].alpha-=.013,n[t].el.style.cssText="left:"+n[t].x+"px;top:"+n[t].y+"px;opacity:"+n[t].alpha+";transform:scale("+n[t].scale+","+n[t].scale+") rotate(45deg);background:"+n[t].color+";z-index:99999");requestAnimationFrame(e)}()}(window,document)</script><script>var now = new Date();
+  function createtime(){
+      var grt= new Date("05/27/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  fetch('https://v1.hitokoto.cn/')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+      })
+      .catch(console.error)</script></body></html>
